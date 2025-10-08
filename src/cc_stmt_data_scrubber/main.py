@@ -12,9 +12,8 @@ from cc_stmt_data_scrubber.value_converter import convert_amount_value
 # Load environment variables from .env file
 load_dotenv()
 
-def convert_csv_values(
-    card_type, input_filename, output_filename
-):
+
+def convert_csv_values(card_type, input_filename, output_filename):
     """
     Converts values in a specific column of a CSV file.
 
@@ -46,7 +45,9 @@ def convert_csv_values(
                     if column_index == desc_column:
                         row[column_index] = convert_desc_value(card_type, column_value)
                     elif column_index == category_column:
-                        row[column_index] = map_desc_to_category(card_type, row[desc_column])
+                        row[column_index] = map_desc_to_category(
+                            card_type, row[desc_column]
+                        )
                     elif column_index == amount_column:
                         row[column_index] = convert_amount_value(column_value)
             except (IndexError, ValueError):
@@ -76,10 +77,6 @@ def main():
         print(f"API Key loaded: {api_key[:8]}...")
     else:
         print("No API key configured (see .env.example)")
-
-
-
-
 
     # Beginning of data scrubbing
     if len(sys.argv) == 4:

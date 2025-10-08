@@ -136,7 +136,7 @@ def convert_desc_value(cc_type, description):
             "Water (Mid-Peninsula Water District)": r"\bMID-PENINSULA WATER\b",
             "YouTube Premium": r"\bYouTubePremium\b",
             "Whole Foods": r"\bWHOLE FOODS|WHOLEFDS\b",
-            "ZombieRunner Coffee": r"\bZOMBIERUNNER\b"
+            "ZombieRunner Coffee": r"\bZOMBIERUNNER\b",
         }
 
     elif cc_type == "personal":
@@ -283,7 +283,7 @@ def map_desc_to_category(cc_type, description):
             "Viva la Tarte": "Family - Meals",
             "Waste (Recology)": "Family - Housing",
             "Whole Foods": "Family - Groceries",
-            "ZombieRunner Coffee": "Family - Meals"
+            "ZombieRunner Coffee": "Family - Meals",
         }
     elif cc_type == "personal":
         desc_to_category_mapper = {
