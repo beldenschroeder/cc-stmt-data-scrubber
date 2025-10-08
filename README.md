@@ -21,20 +21,63 @@ and finance.
 Run the application:
 
 ```bash
-cc-scrubber
+cc-scrubber <cc_type> <input_file> <output_file>
+```
+
+Where:
+- `cc_type`: Credit card type - either `family` or `personal`
+- `input_file`: Path to the input CSV file
+- `output_file`: Path to the output CSV file
+
+Example:
+
+```bash
+cc-scrubber personal "~/Downloads/statement.csv" "~/Desktop/output.csv"
 ```
 
 Alternatively, you can run it as a Python module:
 
 ```bash
-python -m cc_stmt_data_scrubber.main
+python -m cc_stmt_data_scrubber.main <cc_type> <input_file> <output_file>
 ```
 
-Run tests:
+## Testing
+
+The project includes comprehensive unit tests using pytest.
+
+### Run All Tests
 
 ```bash
-pytest
+pytest tests/ -v
 ```
+
+### Run Specific Test File
+
+```bash
+pytest tests/test_value_converter.py -v
+```
+
+### Run Specific Test Class
+
+```bash
+pytest tests/test_csv_processor.py::TestProcessRow -v
+```
+
+### Run with Short Traceback
+
+```bash
+pytest tests/ -v --tb=short
+```
+
+### Test Coverage
+
+The test suite includes 67 tests covering:
+- Value conversion functions
+- Description and category mappings
+- CSV configuration
+- CSV file processing
+- Command-line argument parsing
+- Error handling and edge cases
 
 ## Development
 
