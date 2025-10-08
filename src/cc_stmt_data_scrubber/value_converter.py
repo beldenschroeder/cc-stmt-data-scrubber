@@ -36,6 +36,13 @@ def convert_desc_value(cc_type, description):
       The description value converted to its proper value.
     """
 
+    # Common conversions shared by both personal and family
+    common_conversions_with_regex = {
+        "Barnes & Noble": r"\bBARNES &amp; NOBLE\b",
+        "Kindle Services": r"\bKindle Svcs\b",
+        "Lunardi's": r"\bLUNARDI'S\b",
+    }
+
     conversions_with_regex = {}
 
     if cc_type == "family":
@@ -54,7 +61,6 @@ def convert_desc_value(cc_type, description):
             "Annie's Hot Dogs": r"\bANNIE'S HOT DOGS\b",
             "B40 Café": r"\bB40 CAFE\b",
             "Barista Underground": r"\bBARISTA UNDERGROU\b",
-            "Barnes & Noble": r"\bBARNES &amp; NOBLE\b",
             "Baskin-Robbins": r"\bBASKIN\b",
             "Bedi Farms": r"\bBEDI FARMS\b",
             "Ben Tre": r"\bBEN TRE\b",
@@ -92,13 +98,11 @@ def convert_desc_value(cc_type, description):
             "Impasto": r"\bIMPASTO\b",
             "Instacart": r"\bINSTACART\b",
             "Internet (Sonic)": r"\bSONIC\b",
-            "Kindle Services": r"\bKindle Svcs\b",
             "La Bicyclette": r"\bLA BICYCLETTE\b",
             "La Boulangerie": r"\bLA BOULANGERIE\b",
             "La Lucha": r"\bLA LUCHA\b",
             "Lost Coffee": r"\bLOST COFFEE\b",
             "Lucile Packard Children's Hospital": r"\bLUCILE PACKARD CHILDRENS\b",
-            "Lunardi's": r"\bLUNARDI'S\b",
             "Lyft": r"\bLYFT\b",
             "Made out of Dough": r"\bMADE OUT OF DOUGH\b",
             "Mademoiselle Colette": r"\bMADEMOISELLE COLETTE\b",
@@ -143,16 +147,13 @@ def convert_desc_value(cc_type, description):
         conversions_with_regex = {
             "Amazon Web Services": r"\bAMAZON WEB SERVICES\b",
             "Audible": r"\bAUDIBLE\b",
-            "Barnes & Noble": r"\bBARNES &amp; NOBLE\b",
             "Calvin Klein": r"\bCalvin Klein\b",
             "Fjällräven": r"\bFJALLRAVEN\b",
             "Fooda": r"\bFOODA\b",
             "J.Crew": r"\bJ Crew\b",
             "KCSM membership": r"\bKcsm Jazz 91\b",
-            "Kindle Services": r"\bKindle Svcs\b",
             "KQED membership": r"\bKQED\b",
             "L.L. Bean": r"\bLlbean\b",
-            "Lunardi's": r"\bLUNARDI'S\b",
             "Patagonia": r"\bPATAGONIA\b",
             "Pink Owl Coffee": r"\bPINK OWL COFFEE\b",
             "Starbucks": r"\bSTARBUCKS\b",
@@ -161,6 +162,9 @@ def convert_desc_value(cc_type, description):
             "The Atlantic": r"\bThe Atlantic\b",
             "The New York Times": r"\bNYTIMES\b",
         }
+
+    # Merge common conversions with type-specific conversions
+    conversions_with_regex.update(common_conversions_with_regex)
 
     converted_result = description
 
