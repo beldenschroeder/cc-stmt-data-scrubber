@@ -125,6 +125,7 @@ PERSONAL_DESC_CONVERSIONS = {
     "Tacx": r"\bGARMIN\b",
     "The Atlantic": r"\bThe Atlantic\b",
     "The New York Times": r"\bNYTIMES\b",
+    "WIRED Magazine": r"\bWired - Digital\b",
 }
 
 

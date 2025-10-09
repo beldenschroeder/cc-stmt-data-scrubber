@@ -15,23 +15,34 @@ def process_row(card_type, row, config):
         config: ColumnConfig object with column indices.
         
     Returns:
-        Modified row with conversions applied.
+        New list with conversions applied.
     """
+    # Create a copy to avoid mutating the input
+    processed_row = list(row)
+    
     try:
-        for column_index, column_value in enumerate(row):
-            if column_index == config.description_column:
-                row[column_index] = convert_desc_value(card_type, column_value)
-            elif column_index == config.category_column:
-                row[column_index] = map_desc_to_category(
-                    card_type, row[config.description_column]
-                )
-            elif config.amount_column is not None and column_index == config.amount_column:
-                row[column_index] = convert_amount_value(column_value)
+        # Process description column
+        if len(processed_row) > config.description_column:
+            processed_row[config.description_column] = convert_desc_value(
+                card_type, processed_row[config.description_column]
+            )
+        
+        # Process category column
+        if len(processed_row) > config.category_column:
+            processed_row[config.category_column] = map_desc_to_category(
+                card_type, processed_row[config.description_column]
+            )
+        
+        # Process amount column (if configured)
+        if config.amount_column is not None and len(processed_row) > config.amount_column:
+            processed_row[config.amount_column] = convert_amount_value(
+                processed_row[config.amount_column]
+            )
     except (IndexError, ValueError):
         # Handle cases where the column is missing or the value can't be converted
         pass
     
-    return row
+    return processed_row
 
 
 def process_csv_file(card_type, input_filename, output_filename):

@@ -122,6 +122,7 @@ PERSONAL_CATEGORY_MAPPINGS = {
     "Strava Summit": "Subscriptions",
     "Tacx": "Subscriptions",
     "The New York Times": "Subscriptions",
+    "WIRED Magazine": "Subscriptions",
 }
 
 
