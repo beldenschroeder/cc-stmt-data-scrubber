@@ -1,6 +1,7 @@
 """CSV file processing for credit card statement data scrubbing."""
 
 import csv
+from typing import List, Iterable
 
 from .csv_config import get_column_config
 from .value_converter import convert_desc_value, map_desc_to_category, convert_amount_value
@@ -45,22 +46,41 @@ def process_row(card_type, row, config):
     return processed_row
 
 
+def process_rows(card_type, rows: Iterable[List[str]]) -> Iterable[List[str]]:
+    """Process multiple CSV rows by applying conversions.
+    
+    This function focuses solely on data transformation logic,
+    separated from I/O concerns (SRP compliance).
+    
+    Args:
+        card_type: The credit card type ('family' or 'personal').
+        rows: Iterable of rows (each row is a list of column values).
+        
+    Yields:
+        Processed rows with conversions applied.
+    """
+    config = get_column_config(card_type)
+    
+    for row in rows:
+        yield process_row(card_type, row, config)
+
+
 def process_csv_file(card_type, input_filename, output_filename):
     """Process a CSV file by applying conversions to specific columns.
+    
+    This function handles file I/O and delegates processing to process_rows().
     
     Args:
         card_type: The credit card type ('family' or 'personal').
         input_filename: Path to the input CSV file.
         output_filename: Path to the output CSV file.
     """
-    config = get_column_config(card_type)
-    
     with open(input_filename, "r", encoding="utf-8") as infile, open(
         output_filename, "w", newline="", encoding="utf-8"
     ) as outfile:
         reader = csv.reader(infile)
         writer = csv.writer(outfile)
         
-        for row in reader:
-            processed_row = process_row(card_type, row, config)
-            writer.writerow(processed_row)
+        # Delegate processing logic to process_rows()
+        processed_rows = process_rows(card_type, reader)
+        writer.writerows(processed_rows)

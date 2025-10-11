@@ -4,7 +4,7 @@ import csv
 import tempfile
 import pytest
 from pathlib import Path
-from cc_stmt_data_scrubber.csv_processor import process_row, process_csv_file
+from cc_stmt_data_scrubber.csv_processor import process_row, process_rows, process_csv_file
 from cc_stmt_data_scrubber.csv_config import ColumnConfig
 
 
@@ -59,6 +59,42 @@ class TestProcessRow:
         # Should not raise an exception
         result = process_row("family", row, config)
         assert result[2] == "Amazon"  # Description still converted
+
+
+class TestProcessRows:
+    """Tests for process_rows function (SRP-compliant data processing)."""
+
+    def test_process_rows_in_memory(self):
+        """Test processing rows without file I/O (demonstrates SRP benefit)."""
+        # In-memory data - no files needed!
+        input_rows = [
+            ["Date", "Type", "AMAZON PRIME", "", "Merchant", "50.00"],
+            ["Date", "Type", "COSTCO", "", "Merchant", "100.00"],
+        ]
+        
+        result = list(process_rows("family", input_rows))
+        
+        assert len(result) == 2
+        assert result[0][2] == "Amazon Prime"
+        assert result[0][3] == "Family - Subscriptions"
+        assert result[0][5] == -50.0
+        assert result[1][2] == "Costco"
+        assert result[1][3] == "Family - Groceries"
+
+    def test_process_rows_generator(self):
+        """Test that process_rows returns a generator (memory efficient)."""
+        input_rows = [["Date", "Type", "STARBUCKS", ""]]
+        
+        result = process_rows("personal", input_rows)
+        
+        # Should be a generator, not a list
+        assert hasattr(result, '__iter__')
+        assert hasattr(result, '__next__')
+
+    def test_process_rows_empty(self):
+        """Test processing empty row list."""
+        result = list(process_rows("family", []))
+        assert result == []
 
 
 class TestProcessCsvFile:
