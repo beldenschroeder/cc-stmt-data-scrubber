@@ -126,6 +126,25 @@ PERSONAL_CATEGORY_MAPPINGS = {
 }
 
 
+# Registry for category mappings - open for extension, closed for modification
+_CATEGORY_MAPPINGS_REGISTRY = {
+    "family": FAMILY_CATEGORY_MAPPINGS,
+    "personal": PERSONAL_CATEGORY_MAPPINGS,
+}
+
+
+def register_category_mappings(cc_type, mappings):
+    """Register category mappings for a new card type.
+    
+    This allows extending the system with new card types without modifying existing code.
+    
+    Args:
+        cc_type: The credit card type identifier.
+        mappings: Dictionary mapping descriptions to categories.
+    """
+    _CATEGORY_MAPPINGS_REGISTRY[cc_type] = mappings
+
+
 def get_category_mappings(cc_type):
     """Get category mappings for the given cc_type.
     
@@ -134,10 +153,13 @@ def get_category_mappings(cc_type):
         
     Returns:
         Dictionary mapping descriptions to categories.
+        
+    Raises:
+        ValueError: If cc_type is not registered.
     """
-    if cc_type == "family":
-        return FAMILY_CATEGORY_MAPPINGS
-    elif cc_type == "personal":
-        return PERSONAL_CATEGORY_MAPPINGS
-    else:
-        return {}
+    if cc_type not in _CATEGORY_MAPPINGS_REGISTRY:
+        raise ValueError(
+            f"Unknown card type: {cc_type}. "
+            f"Available types: {', '.join(_CATEGORY_MAPPINGS_REGISTRY.keys())}"
+        )
+    return _CATEGORY_MAPPINGS_REGISTRY[cc_type]

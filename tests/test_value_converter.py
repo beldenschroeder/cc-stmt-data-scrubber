@@ -62,9 +62,9 @@ class TestConvertDescValue:
         assert result == "UNKNOWN MERCHANT"
 
     def test_invalid_card_type(self):
-        """Test with invalid card type returns original value."""
-        result = convert_desc_value("invalid", "STARBUCKS")
-        assert result == "STARBUCKS"
+        """Test with invalid card type raises ValueError."""
+        with pytest.raises(ValueError, match="Unknown card type: invalid"):
+            convert_desc_value("invalid", "STARBUCKS")
 
 
 class TestMapDescToCategory:
@@ -91,9 +91,9 @@ class TestMapDescToCategory:
         assert result == ""
 
     def test_invalid_card_type(self):
-        """Test invalid card type returns empty string."""
-        result = map_desc_to_category("invalid", "Starbucks")
-        assert result == ""
+        """Test invalid card type raises ValueError."""
+        with pytest.raises(ValueError, match="Unknown card type: invalid"):
+            map_desc_to_category("invalid", "Starbucks")
 
 
 class TestConvertAmountValue:

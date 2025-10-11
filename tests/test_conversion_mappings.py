@@ -59,10 +59,9 @@ class TestGetDescConversions:
         assert "Amazon Prime" not in conversions
 
     def test_invalid_card_type(self):
-        """Test that invalid card type returns only common conversions."""
-        conversions = get_desc_conversions("invalid")
-        assert "Barnes & Noble" in conversions
-        assert len(conversions) == len(COMMON_DESC_CONVERSIONS)
+        """Test that invalid card type raises ValueError."""
+        with pytest.raises(ValueError, match="Unknown card type: invalid"):
+            get_desc_conversions("invalid")
 
     def test_returns_copy(self):
         """Test that function returns a copy, not the original dict."""

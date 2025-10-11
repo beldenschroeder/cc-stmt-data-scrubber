@@ -58,9 +58,9 @@ class TestGetCategoryMappings:
         assert "Amazon Prime" not in mappings
 
     def test_invalid_card_type(self):
-        """Test that invalid card type returns empty dict."""
-        mappings = get_category_mappings("invalid")
-        assert mappings == {}
+        """Test that invalid card type raises ValueError."""
+        with pytest.raises(ValueError, match="Unknown card type: invalid"):
+            get_category_mappings("invalid")
 
     def test_returns_reference(self):
         """Test that function returns reference to original dict."""
