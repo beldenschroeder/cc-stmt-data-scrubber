@@ -14,7 +14,8 @@ and finance.
    - Linux/Mac: `source venv/bin/activate`
    - Windows: `venv\Scripts\activate`
 4. Install the package in editable mode: `pip install -e .`
-5. Copy `.env.example` to `.env` and configure
+5. (Optional) For development, install with dev dependencies: `pip install -e ".[dev]"`
+6. (Optional) For development, setup pre-commit hooks: `pre-commit install`
 
 ## Usage
 
@@ -81,19 +82,64 @@ The test suite includes 67 tests covering:
 
 ## Development
 
-Install the package with dev dependencies (pytest, black, flake8):
+### Install Development Dependencies
+
+Install the package with dev dependencies (pytest, black, flake8, isort, pre-commit):
 
 ```bash
 pip install -e ".[dev]"
 ```
 
-Format code:
+### Pre-commit Hooks
+
+This project uses `pre-commit` to automatically format and lint code before each commit.
+
+**Setup pre-commit hooks:**
+
+```bash
+pre-commit install
+```
+
+**What it does:**
+- Automatically runs `black` to format code
+- Runs `flake8` to check code style
+- Runs `isort` to sort imports
+- Checks for trailing whitespace, large files, merge conflicts, etc.
+
+**Manual run (optional):**
+
+```bash
+# Run on all files
+pre-commit run --all-files
+
+# Run on staged files only
+pre-commit run
+```
+
+**Skip hooks (when needed):**
+
+```bash
+# Skip all hooks for emergency commits
+git commit --no-verify -m "Emergency fix"
+```
+
+### Manual Formatting and Linting
+
+If you prefer to run tools manually:
+
+**Format code:**
 
 ```bash
 black src/ tests/
 ```
 
-Lint code:
+**Sort imports:**
+
+```bash
+isort src/ tests/
+```
+
+**Lint code:**
 
 ```bash
 flake8 src/ tests/

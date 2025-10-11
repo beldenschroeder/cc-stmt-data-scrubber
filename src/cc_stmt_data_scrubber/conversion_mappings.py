@@ -140,9 +140,9 @@ _DESC_CONVERSIONS_REGISTRY = {
 
 def register_desc_conversions(cc_type: str, conversions: Dict[str, str]) -> None:
     """Register description conversions for a new card type.
-    
+
     This allows extending the system with new card types without modifying existing code.
-    
+
     Args:
         cc_type: The credit card type identifier.
         conversions: Mapping from clean descriptions to regex patterns.
@@ -152,13 +152,13 @@ def register_desc_conversions(cc_type: str, conversions: Dict[str, str]) -> None
 
 def get_desc_conversions(cc_type: str) -> Dict[str, str]:
     """Get description conversion mappings for the given card type.
-    
+
     Args:
         cc_type: The credit card type ('family' or 'personal').
-        
+
     Returns:
         Mapping from clean descriptions to regex patterns.
-        
+
     Raises:
         ValueError: If cc_type is not registered.
     """
@@ -167,7 +167,7 @@ def get_desc_conversions(cc_type: str) -> Dict[str, str]:
             f"Unknown card type: {cc_type}. "
             f"Available types: {', '.join(_DESC_CONVERSIONS_REGISTRY.keys())}"
         )
-    
+
     conversions = _DESC_CONVERSIONS_REGISTRY[cc_type].copy()
     # Merge common conversions
     conversions.update(COMMON_DESC_CONVERSIONS)

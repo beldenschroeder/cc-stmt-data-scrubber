@@ -1,10 +1,9 @@
 """Module converting values in a CSV file to a correct value."""
 
 import re
-from typing import Dict
 
-from .conversion_mappings import get_desc_conversions
 from .category_mappings import get_category_mappings
+from .conversion_mappings import get_desc_conversions
 
 
 def convert_value_with_regex(regex: str, value: str, new_value: str) -> str:
@@ -37,12 +36,14 @@ def convert_desc_value(cc_type: str, description: str) -> str:
         The normalized description value.
     """
     conversions = get_desc_conversions(cc_type)
-    
+
     for clean_desc, regex_pattern in conversions.items():
-        converted_value = convert_value_with_regex(regex_pattern, description, clean_desc)
+        converted_value = convert_value_with_regex(
+            regex_pattern, description, clean_desc
+        )
         if converted_value != description:
             return converted_value
-    
+
     return description
 
 

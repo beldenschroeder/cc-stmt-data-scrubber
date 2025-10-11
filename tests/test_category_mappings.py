@@ -1,6 +1,7 @@
 """Tests for category_mappings module."""
 
 import pytest
+
 from cc_stmt_data_scrubber.category_mappings import (
     FAMILY_CATEGORY_MAPPINGS,
     PERSONAL_CATEGORY_MAPPINGS,

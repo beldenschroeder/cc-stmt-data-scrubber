@@ -1,9 +1,10 @@
 """Tests for csv_config module."""
 
 import pytest
+
 from cc_stmt_data_scrubber.csv_config import (
-    ColumnConfig,
     CARD_TYPE_CONFIGS,
+    ColumnConfig,
     get_column_config,
 )
 
@@ -13,21 +14,14 @@ class TestColumnConfig:
 
     def test_column_config_creation(self):
         """Test creating a ColumnConfig instance."""
-        config = ColumnConfig(
-            description_column=2,
-            category_column=3,
-            amount_column=5
-        )
+        config = ColumnConfig(description_column=2, category_column=3, amount_column=5)
         assert config.description_column == 2
         assert config.category_column == 3
         assert config.amount_column == 5
 
     def test_column_config_optional_amount(self):
         """Test ColumnConfig with optional amount column."""
-        config = ColumnConfig(
-            description_column=3,
-            category_column=4
-        )
+        config = ColumnConfig(description_column=3, category_column=4)
         assert config.description_column == 3
         assert config.category_column == 4
         assert config.amount_column is None

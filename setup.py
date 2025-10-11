@@ -1,6 +1,6 @@
 """Setup configuration for the project."""
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
@@ -34,6 +34,8 @@ setup(
             "pytest>=7.4.0",
             "black>=23.7.0",
             "flake8>=6.1.0",
+            "isort>=5.13.0",
+            "pre-commit>=3.5.0",
         ],
     },
     entry_points={

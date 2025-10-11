@@ -1,6 +1,7 @@
 """Tests for conversion_mappings module."""
 
 import pytest
+
 from cc_stmt_data_scrubber.conversion_mappings import (
     COMMON_DESC_CONVERSIONS,
     FAMILY_DESC_CONVERSIONS,

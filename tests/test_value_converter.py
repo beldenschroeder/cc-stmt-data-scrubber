@@ -1,11 +1,12 @@
 """Tests for value_converter module."""
 
 import pytest
+
 from cc_stmt_data_scrubber.value_converter import (
-    convert_value_with_regex,
-    convert_desc_value,
-    map_desc_to_category,
     convert_amount_value,
+    convert_desc_value,
+    convert_value_with_regex,
+    map_desc_to_category,
 )
 
 

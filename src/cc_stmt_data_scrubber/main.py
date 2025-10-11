@@ -8,10 +8,10 @@ from cc_stmt_data_scrubber.csv_processor import process_csv_file
 
 def parse_arguments() -> Tuple[str, str, str]:
     """Parse and validate command-line arguments.
-    
+
     Returns:
         Tuple of (card_type, input_file, output_file).
-        
+
     Raises:
         SystemExit: If arguments are invalid.
     """
@@ -19,14 +19,14 @@ def parse_arguments() -> Tuple[str, str, str]:
         print("Usage: cc-scrubber <cc_type> <input_file> <output_file>")
         print("  cc_type: 'family' or 'personal'")
         sys.exit(1)
-    
+
     return sys.argv[1], sys.argv[2], sys.argv[3]
 
 
 def main() -> None:
     """Run the main application."""
     card_type, input_file, output_file = parse_arguments()
-    
+
     try:
         process_csv_file(card_type, input_file, output_file)
         print("\nApplication finished successfully!")
