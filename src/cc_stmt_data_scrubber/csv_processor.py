@@ -3,7 +3,7 @@
 import csv
 from typing import Iterable, List
 
-from .csv_config import get_column_config
+from .csv_config import ColumnConfig, get_column_config
 from .value_converter import (
     convert_amount_value,
     convert_desc_value,
@@ -11,7 +11,7 @@ from .value_converter import (
 )
 
 
-def process_row(card_type: str, row: List[str], config) -> List[str]:
+def process_row(card_type: str, row: List[str], config: ColumnConfig) -> List[str]:
     """Process a single CSV row by applying conversions.
 
     Args:
