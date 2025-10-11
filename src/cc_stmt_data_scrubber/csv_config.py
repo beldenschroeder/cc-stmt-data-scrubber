@@ -37,7 +37,7 @@ def get_column_config(card_type: str) -> ColumnConfig:
         card_type: The credit card type ('family' or 'personal').
         
     Returns:
-        ColumnConfig object with column indices.
+        Column configuration with column indices.
         
     Raises:
         ValueError: If card_type is not recognized.

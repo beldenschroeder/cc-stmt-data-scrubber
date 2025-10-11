@@ -145,19 +145,19 @@ def register_desc_conversions(cc_type: str, conversions: Dict[str, str]) -> None
     
     Args:
         cc_type: The credit card type identifier.
-        conversions: Dictionary mapping clean descriptions to regex patterns.
+        conversions: Mapping from clean descriptions to regex patterns.
     """
     _DESC_CONVERSIONS_REGISTRY[cc_type] = conversions
 
 
 def get_desc_conversions(cc_type: str) -> Dict[str, str]:
-    """Get description conversion mappings for the given cc_type.
+    """Get description conversion mappings for the given card type.
     
     Args:
         cc_type: The credit card type ('family' or 'personal').
         
     Returns:
-        Dictionary mapping clean descriptions to regex patterns.
+        Mapping from clean descriptions to regex patterns.
         
     Raises:
         ValueError: If cc_type is not registered.

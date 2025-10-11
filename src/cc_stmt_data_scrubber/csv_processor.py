@@ -12,8 +12,8 @@ def process_row(card_type: str, row: List[str], config) -> List[str]:
     
     Args:
         card_type: The credit card type ('family' or 'personal').
-        row: List of column values for the row.
-        config: ColumnConfig object with column indices.
+        row: Column values for the row.
+        config: Column configuration with indices.
         
     Returns:
         New list with conversions applied.
@@ -54,7 +54,7 @@ def process_rows(card_type: str, rows: Iterable[List[str]]) -> Iterable[List[str
     
     Args:
         card_type: The credit card type ('family' or 'personal').
-        rows: Iterable of rows (each row is a list of column values).
+        rows: Iterable of rows, where each row is a list of column values.
         
     Yields:
         Processed rows with conversions applied.

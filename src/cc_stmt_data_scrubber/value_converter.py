@@ -8,17 +8,15 @@ from .category_mappings import get_category_mappings
 
 
 def convert_value_with_regex(regex: str, value: str, new_value: str) -> str:
-    """
-    Converts a value to its proper value.
+    """Convert a value to its proper value using regex matching.
 
     Args:
-      regex: The regex used to convert the value if there is a match.
-      value: The value to convert.
-      new_value: The value to convert to.
+        regex: The regex pattern used to match the value.
+        value: The value to convert.
+        new_value: The value to convert to if regex matches.
 
     Returns:
-      The value converted to its proper value if there is a match with the
-      regex, otherwise return the original value.
+        The converted value if regex matches, otherwise the original value.
     """
     result_value = value
 
@@ -29,15 +27,14 @@ def convert_value_with_regex(regex: str, value: str, new_value: str) -> str:
 
 
 def convert_desc_value(cc_type: str, description: str) -> str:
-    """
-    Converts a description value to its proper value.
+    """Convert a description value to its proper normalized form.
 
     Args:
-      cc_type: The credit card type.
-      description: The description value to convert.
+        cc_type: The credit card type ('family' or 'personal').
+        description: The raw description value to convert.
 
     Returns:
-      The description value converted to its proper value.
+        The normalized description value.
     """
     conversions = get_desc_conversions(cc_type)
     
@@ -50,28 +47,26 @@ def convert_desc_value(cc_type: str, description: str) -> str:
 
 
 def map_desc_to_category(cc_type: str, description: str) -> str:
-    """
-    Maps a description value to a category value.
+    """Map a description value to its corresponding category.
 
     Args:
-      cc_type: The credit card type.
-      description: The description value to map to a category.
+        cc_type: The credit card type ('family' or 'personal').
+        description: The description value to map.
 
     Returns:
-      The category value mapped from the description value.
+        The category value, or empty string if no mapping exists.
     """
     category_mappings = get_category_mappings(cc_type)
     return category_mappings.get(description, "")
 
 
 def convert_amount_value(amount: str) -> float:
-    """
-    Converts an amount value to its proper value.
+    """Convert an amount string to a negative float.
 
     Args:
-      amount: The amount value to convert.
+        amount: The amount value as a string.
 
     Returns:
-      The amount value converted to its proper value.
+        The amount as a negative float value.
     """
     return -float(amount)
