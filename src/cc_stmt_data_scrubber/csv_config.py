@@ -30,7 +30,7 @@ CARD_TYPE_CONFIGS = {
 }
 
 
-def get_column_config(card_type):
+def get_column_config(card_type: str) -> ColumnConfig:
     """Get column configuration for the given card type.
     
     Args:

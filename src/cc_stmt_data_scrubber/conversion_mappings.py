@@ -4,6 +4,8 @@ This module contains regex patterns used to normalize merchant names
 from credit card statements into clean, consistent descriptions.
 """
 
+from typing import Dict
+
 # Common conversions shared by both personal and family
 COMMON_DESC_CONVERSIONS = {
     "Barnes & Noble": r"\bBARNES &amp; NOBLE\b",
@@ -136,7 +138,7 @@ _DESC_CONVERSIONS_REGISTRY = {
 }
 
 
-def register_desc_conversions(cc_type, conversions):
+def register_desc_conversions(cc_type: str, conversions: Dict[str, str]) -> None:
     """Register description conversions for a new card type.
     
     This allows extending the system with new card types without modifying existing code.
@@ -148,7 +150,7 @@ def register_desc_conversions(cc_type, conversions):
     _DESC_CONVERSIONS_REGISTRY[cc_type] = conversions
 
 
-def get_desc_conversions(cc_type):
+def get_desc_conversions(cc_type: str) -> Dict[str, str]:
     """Get description conversion mappings for the given cc_type.
     
     Args:

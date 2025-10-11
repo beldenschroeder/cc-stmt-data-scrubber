@@ -4,6 +4,8 @@ This module contains mappings from merchant descriptions to expense categories
 for both family and personal credit card types.
 """
 
+from typing import Dict
+
 FAMILY_CATEGORY_MAPPINGS = {
     "1Password": "Family - Subscriptions",
     "11th Hour Coffee": "Family - Meals",
@@ -133,7 +135,7 @@ _CATEGORY_MAPPINGS_REGISTRY = {
 }
 
 
-def register_category_mappings(cc_type, mappings):
+def register_category_mappings(cc_type: str, mappings: Dict[str, str]) -> None:
     """Register category mappings for a new card type.
     
     This allows extending the system with new card types without modifying existing code.
@@ -145,7 +147,7 @@ def register_category_mappings(cc_type, mappings):
     _CATEGORY_MAPPINGS_REGISTRY[cc_type] = mappings
 
 
-def get_category_mappings(cc_type):
+def get_category_mappings(cc_type: str) -> Dict[str, str]:
     """Get category mappings for the given cc_type.
     
     Args:

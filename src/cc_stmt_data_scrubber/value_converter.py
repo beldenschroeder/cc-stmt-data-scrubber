@@ -1,12 +1,13 @@
 """Module converting values in a CSV file to a correct value."""
 
 import re
+from typing import Dict
 
 from .conversion_mappings import get_desc_conversions
 from .category_mappings import get_category_mappings
 
 
-def convert_value_with_regex(regex, value, new_value):
+def convert_value_with_regex(regex: str, value: str, new_value: str) -> str:
     """
     Converts a value to its proper value.
 
@@ -27,7 +28,7 @@ def convert_value_with_regex(regex, value, new_value):
     return result_value
 
 
-def convert_desc_value(cc_type, description):
+def convert_desc_value(cc_type: str, description: str) -> str:
     """
     Converts a description value to its proper value.
 
@@ -48,7 +49,7 @@ def convert_desc_value(cc_type, description):
     return description
 
 
-def map_desc_to_category(cc_type, description):
+def map_desc_to_category(cc_type: str, description: str) -> str:
     """
     Maps a description value to a category value.
 
@@ -63,7 +64,7 @@ def map_desc_to_category(cc_type, description):
     return category_mappings.get(description, "")
 
 
-def convert_amount_value(amount):
+def convert_amount_value(amount: str) -> float:
     """
     Converts an amount value to its proper value.
 

@@ -7,7 +7,7 @@ from .csv_config import get_column_config
 from .value_converter import convert_desc_value, map_desc_to_category, convert_amount_value
 
 
-def process_row(card_type, row, config):
+def process_row(card_type: str, row: List[str], config) -> List[str]:
     """Process a single CSV row by applying conversions.
     
     Args:
@@ -46,7 +46,7 @@ def process_row(card_type, row, config):
     return processed_row
 
 
-def process_rows(card_type, rows: Iterable[List[str]]) -> Iterable[List[str]]:
+def process_rows(card_type: str, rows: Iterable[List[str]]) -> Iterable[List[str]]:
     """Process multiple CSV rows by applying conversions.
     
     This function focuses solely on data transformation logic,
@@ -65,7 +65,7 @@ def process_rows(card_type, rows: Iterable[List[str]]) -> Iterable[List[str]]:
         yield process_row(card_type, row, config)
 
 
-def process_csv_file(card_type, input_filename, output_filename):
+def process_csv_file(card_type: str, input_filename: str, output_filename: str) -> None:
     """Process a CSV file by applying conversions to specific columns.
     
     This function handles file I/O and delegates processing to process_rows().

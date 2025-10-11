@@ -1,11 +1,12 @@
 """Main application entry point."""
 
 import sys
+from typing import Tuple
 
 from cc_stmt_data_scrubber.csv_processor import process_csv_file
 
 
-def parse_arguments():
+def parse_arguments() -> Tuple[str, str, str]:
     """Parse and validate command-line arguments.
     
     Returns:
@@ -22,7 +23,7 @@ def parse_arguments():
     return sys.argv[1], sys.argv[2], sys.argv[3]
 
 
-def main():
+def main() -> None:
     """Run the main application."""
     card_type, input_file, output_file = parse_arguments()
     
