@@ -81,6 +81,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Rebyl Coffee & Foods": "Family - Meals",
     "Redwood City Nissan": "Family - Car Expenses",
     "Ritual Coffee": "Family - Meals",
+    "RJ Produce": "Family - Groceries",
     "Royo Bread": "Family - Groceries",
     "Safeway": "Family - Groceries",
     "Santa Cruz City Parking": "Family - Parking",
