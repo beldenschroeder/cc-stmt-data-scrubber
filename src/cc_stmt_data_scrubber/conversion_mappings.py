@@ -56,6 +56,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Giftly": r"\bGIFTLY.COM\b",
     "Google Fi": r"\bGOOGLE *FI\b",
     "Granlibakken": r"\bGRANLIBAKKEN\b",
+    "Greek Table": r"\bGREEK TABLE\b",
     "Groovy Goose": r"\bGROOVY GOOSE\b",
     "FasTrak": r"\bFASTRAK\b",
     "H&R Block tax software": r"\bH&amp;R BLOCK SOFTWARE\b",
