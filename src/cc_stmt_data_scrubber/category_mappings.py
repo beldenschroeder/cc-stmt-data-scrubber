@@ -43,7 +43,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Crystal Springs Produce": "Family - Groceries",
     "Disney+ Premium": "Family - Subscriptions",
     "Doppio Zero": "Family - Meals",
-    "FasTrak": "Family - Tolls",
+    "Equator Coffees": "Family - Meals",
     "Flatbread Queen": "Family - Meals",
     "Footsteps@Cipriani": "Family - Child Schooling",
     "Gallardo's Organic Farm": "Family - Groceries",

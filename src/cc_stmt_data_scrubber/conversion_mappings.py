@@ -49,6 +49,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Crystal Springs Produce": r"\bCRYSTAL SPRINGS PRODUCE\b",
     "Disney+ Premium": r"\bDisney Plus\b",
     "Doppio Zero": r"\bDOPPIO ZERO\b",
+    "Equator Coffees": r"\bEQUATOR COFFEES\b",
     "Flatbread Queen": r"\bFLATBREAD QUEEN\b",
     "Footsteps@Cipriani": r"\bFOOTSTEPS\b",
     "Gallardo's Organic Farm": r"\bGALLARDOS ORGANIC FAR\b",
