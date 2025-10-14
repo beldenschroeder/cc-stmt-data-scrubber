@@ -92,6 +92,7 @@ FAMILY_DESC_CONVERSIONS = {
     "REI": r"\bREI.COM\b",
     "Royo Bread": r"\bROYO BREAD\b",
     "RJ Produce": r"\bRJ PRODUCE\b",
+    "Rodriguez Bros. Ranch": r"\bRODRIGUEZ BROS.RANCH\b",
     "Safeway": r"\bSAFEWAY\b",
     "Santa Cruz City Parking": r"\bSANTA CRUZ CITY PARKING\b",
     "SchoolForce": r"\bSCHOOLFORCE\b",
