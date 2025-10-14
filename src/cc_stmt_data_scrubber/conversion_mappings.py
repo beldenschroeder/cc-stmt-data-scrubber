@@ -54,7 +54,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Gas & electricity (PG&E)": r"\bPG&amp;E\b",
     "General Motors": r"\bGENERAL MOTORS\b",
     "Giftly": r"\bGIFTLY.COM\b",
-    "Google Fi": r"\bGOOGLE *FI\b",
+    "Google Fi": r"\bGOOGLE \*FI\b",
     "Granlibakken": r"\bGRANLIBAKKEN\b",
     "Greek Table": r"\bGREEK TABLE\b",
     "Groovy Goose": r"\bGROOVY GOOSE\b",
