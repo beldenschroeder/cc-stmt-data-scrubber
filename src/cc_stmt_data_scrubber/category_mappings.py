@@ -46,6 +46,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "FasTrak": "Family - Tolls",
     "Flatbread Queen": "Family - Meals",
     "Footsteps@Cipriani": "Family - Child Schooling",
+    "Gallardo's Organic Farm": "Family - Groceries",
     "Gas & electricity (PG&E)": "Family - Housing",
     "General Motors": "Family - Car Expenses",
     "Giftly": "Family - Gifts",
