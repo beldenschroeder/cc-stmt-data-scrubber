@@ -91,6 +91,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Santa Cruz City Parking": "Family - Parking",
     "SchoolForce": "Family - Child Schooling",
     "Shell": "Family - Vehicle Fuel",
+    "SodaStream": "Family - Groceries",
     "Spectra Coffee": "Family - Meals",
     "SPRO Coffee Lab": "Family - Meals",
     "Stanford Health Care": "Family - Health",

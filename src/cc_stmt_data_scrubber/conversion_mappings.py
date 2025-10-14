@@ -96,6 +96,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Santa Cruz City Parking": r"\bSANTA CRUZ CITY PARKING\b",
     "SchoolForce": r"\bSCHOOLFORCE\b",
     "Shell": r"\bSHELL\b",
+    "SodaStream": r"\bSODASTREAM\b",
     "Spectra Coffee": r"\bSPECTRA COFFEE\b",
     "SPRO Coffee Lab": r"\bSPRO\b",
     "Stanford Health Care": r"\bSTANFORD HEALTH CARE\b",
