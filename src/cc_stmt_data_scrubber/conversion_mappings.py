@@ -18,6 +18,7 @@ FAMILY_DESC_CONVERSIONS = {
     "1Password": r"\b1PASSWORD\b",
     "76": r"\b76\b",
     "Ace Hardware": r"\bACE HARDWARE\b",
+    "Achadinha Cheese Comp.": r"\bACHADINHA CHEESE COMP\b",
     "Airbnb": r"\bAIRBNB\b",
     "AllTrails.com": r"\bALLTRAILS\b",
     "Alliance Gas": r"\bALLIANCE GAS\b",
