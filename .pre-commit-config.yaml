@@ -4,7 +4,7 @@ repos:
     rev: 24.10.0
     hooks:
       - id: black
-        language_version: python3.12
+        language_version: python3.13
 
   # Flake8 - Style linter
   - repo: https://github.com/PyCQA/flake8
