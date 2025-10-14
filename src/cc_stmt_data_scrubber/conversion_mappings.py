@@ -68,6 +68,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Impasto": r"\bIMPASTO\b",
     "Instacart": r"\bINSTACART\b",
     "Internet (Sonic)": r"\bSONIC\b",
+    "J&M Ibarra Farms": r"\bJ&amp;M IBARRA FARM\b",
     "La Bicyclette": r"\bLA BICYCLETTE\b",
     "La Boulangerie": r"\bLA BOULANGERIE\b",
     "La Lucha": r"\bLA LUCHA\b",

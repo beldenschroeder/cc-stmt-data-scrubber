@@ -62,6 +62,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Impasto": "Family - Meals",
     "Instacart": "Family - Groceries",
     "Internet (Sonic)": "Family - Housing",
+    "J&M Ibarra Farms": "Family - Groceries",
     "Kindle Services": "Family - Other Losses",
     "La Bicyclette": "Family - Meals",
     "La Burgueria": "Family - Meals",
