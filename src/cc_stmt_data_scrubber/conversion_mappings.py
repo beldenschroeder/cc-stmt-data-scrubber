@@ -99,6 +99,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Stanford Health Care": r"\bSTANFORD HEALTH CARE\b",
     "Talons": r"\bTALONS\b",
     "Temple Coffee": r"\bTEMPLE COFFEE\b",
+    "The Frenchy Gourmet": r"\bTHE FRENCHY GOURMET\b",
     "The Home Depot": r"\bHOME DEPOT\b",
     "The Reading Bug": r"\bTHE READING BUG\b",
     "Ticino": r"\bTICINO\b",

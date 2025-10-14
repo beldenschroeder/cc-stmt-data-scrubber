@@ -94,6 +94,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Stanford Health Care": "Family - Health",
     "Talons": "Family - Meals",
     "Temple Coffee": "Family - Meals",
+    "The Frenchy Gourmet": "Family - Groceries",
     "The Home Depot": "Family - Home Improvement",
     "The Reading Bug": "Family - Child Other",
     "Ticino": "Family - Meals",
