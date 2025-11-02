@@ -30,10 +30,16 @@ Where:
 - `input_file`: Path to the input CSV file
 - `output_file`: Path to the output CSV file
 
-Example:
+Example (Mac):
 
 ```bash
-cc-scrubber personal "~/Downloads/statement.csv" "~/Desktop/output.csv"
+cc-scrubber personal "/Users/[user]/Downloads/statement.csv" "/Users/[user]/Desktop/output.csv"
+```
+
+Example (Windows):
+
+```bash
+cc-scrubber personal "C:\Users\[user]\Downloads\statement.csv" "C:\Users\[user]\Desktop\output.csv"
 ```
 
 Alternatively, you can run it as a Python module:
