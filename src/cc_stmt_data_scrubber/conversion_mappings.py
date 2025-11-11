@@ -11,6 +11,7 @@ COMMON_DESC_CONVERSIONS = {
     "Barnes & Noble": r"\bBARNES &amp; NOBLE\b",
     "Kindle Services": r"\bKindle Svcs\b",
     "Lunardi's": r"\bLUNARDI'S\b",
+    "Noe Café": r"NOE CAFE\b",
 }
 
 FAMILY_DESC_CONVERSIONS = {
