@@ -46,6 +46,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Chevron": r"\bCHEVRON\b",
     "Coffeebar": r"\bCOFFEEBAR\b",
     "Costco": r"\bCOSTCO\b",
+    "Cotogna and Quince": r"\bCOTOGNA AND QUINCE\b",
     "Coupa Café": r"\bCOUPA CAFE\b",
     "Credit card payment": r"\bPayment Thank You - Web\b",
     "Crystal Springs Produce": r"\bCRYSTAL SPRINGS PRODUCE\b",

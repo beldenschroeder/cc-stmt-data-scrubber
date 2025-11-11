@@ -39,6 +39,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Chevron": "Family - Vehicle Fuel",
     "Coffeebar": "Family - Meals",
     "Costco": "Family - Groceries",
+    "Cotogna and Quince": "Family - Meals",
     "Coupa Café": "Family - Meals",
     "Credit card payment": "N/A",
     "Crystal Springs Produce": "Family - Groceries",
