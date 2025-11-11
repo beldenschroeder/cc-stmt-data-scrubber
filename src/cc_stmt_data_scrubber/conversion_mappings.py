@@ -92,7 +92,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Rally Gymnastics": r"\bRally Gymnastics\b",
     "Rebyl Coffee & Foods": r"\bREBYL\b",
     "Redwood City Nissan": r"\bREDWOOD CITY INFINITI\b",
-    "RHJ Fresh": r"\bRHJ FRESH\b",
+    "RHJ Organic": r"RHJ ORGANIC\b",
     "Ritual Coffee": r"\bRITUAL COFFEE\b",
     "REI": r"\bREI.COM\b",
     "Royo Bread": r"\bROYO BREAD\b",

@@ -88,7 +88,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Rally Gymnastics": "Family - Child Extracurricular",
     "Rebyl Coffee & Foods": "Family - Meals",
     "Redwood City Nissan": "Family - Car Expenses",
-    "RHJ Fresh": "Family - Groceries",
+    "RHJ Organic": "Family - Groceries",
     "Ritual Coffee": "Family - Meals",
     "RJ Produce": "Family - Groceries",
     "Rodriguez Bros. Ranch": "Family - Groceries",
