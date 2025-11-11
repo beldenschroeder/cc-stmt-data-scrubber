@@ -100,6 +100,7 @@ FAMILY_DESC_CONVERSIONS = {
     "RHJ Organic": r"RHJ ORGANIC\b",
     "Ritual Coffee": r"\bRITUAL COFFEE\b",
     "REI": r"\bREI.COM\b",
+    "Rojas Family Farms": r"ROJAS FAMILY FARMS\b",
     "Royo Bread": r"\bROYO BREAD\b",
     "RJ Produce": r"\bRJ PRODUCE\b",
     "Rodriguez Bros. Ranch": r"\bRODRIGUEZ BROS.RANCH\b",

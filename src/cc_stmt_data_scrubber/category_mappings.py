@@ -97,6 +97,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Ritual Coffee": "Family - Meals",
     "RJ Produce": "Family - Groceries",
     "Rodriguez Bros. Ranch": "Family - Groceries",
+    "Rojas Family Farms": "Family - Groceries",
     "Royo Bread": "Family - Groceries",
     "Safeway": "Family - Groceries",
     "Santa Cruz City Parking": "Family - Parking",
