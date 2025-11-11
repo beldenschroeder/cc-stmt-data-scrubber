@@ -118,6 +118,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Viva la Tarte": r"\bVIVE LA TARTE\b",
     "Waste (Recology)": r"\bRECOLOGY\b",
     "Water (Mid-Peninsula Water District)": r"\bMID-PENINSULA WATER\b",
+    "Webb Ranch": r"\bWEBB RANCH\b",
     "YouTube Premium": r"\bYouTubePremium\b",
     "Whole Foods": r"\bWHOLE FOODS|WHOLEFDS\b",
     "ZombieRunner Coffee": r"\bZOMBIERUNNER\b",

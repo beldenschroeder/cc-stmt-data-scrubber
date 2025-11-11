@@ -109,6 +109,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Trader Joe's": "Family - Groceries",
     "TuTu School": "Family - Child Extracurricular",
     "Water (Mid-Peninsula Water District)": "Family - Housing",
+    "Webb Ranch": "Family - Groceries",
     "YouTube Premium": "Family - Subscriptions",
     "Vina Enoteca": "Family - Meals",
     "Viva la Tarte": "Family - Meals",
