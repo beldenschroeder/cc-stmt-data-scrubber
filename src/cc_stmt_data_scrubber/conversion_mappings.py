@@ -39,6 +39,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Broadway Babies and Kids": r"\bBroadwayBabiesandKids\b",
     "Budget Rent-a-Car": r"\bBUDGET RENT A CAR\b",
     "CA Academy of Sciences": r"\bCA ACAD. OF SCIENCES\b",
+    "California Bakeshop": r"\bCALIFORNIA BAKESHOP\b",
     "Captain + Stoker": r"\bCAPTAIN + STOKER\b",
     "ChargePoint": r"\bCHARGEPOINT\b",
     "Chevron": r"\bCHEVRON\b",

@@ -33,6 +33,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Broadway Babies and Kids": "Family - Child Extracurricular",
     "Budget Rent-a-Car": "Family - Travel",
     "CA Academy of Sciences": "Family - Memberships",
+    "California Bakeshop": "Family - Groceries",
     "Captain + Stoker": "Family - Meals",
     "ChargePoint": "Family - Vehicle Fuel",
     "Chevron": "Family - Vehicle Fuel",
