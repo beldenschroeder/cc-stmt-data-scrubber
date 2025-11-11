@@ -117,6 +117,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Talons": r"\bTALONS\b",
     "Temple Coffee": r"\bTEMPLE COFFEE\b",
     "The Frenchy Gourmet": r"\bTHE FRENCHY GOURMET\b",
+    "Thai Tamarind": r"\bTHAI TAMARIND\b",
     "The Home Depot": r"\bHOME DEPOT\b",
     "The Reading Bug": r"\bTHE READING BUG\b",
     "Ticino": r"\bTICINO\b",
