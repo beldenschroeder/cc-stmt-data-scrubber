@@ -75,6 +75,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Made out of Dough": "Family - Groceries",
     "Mademoiselle Colette": "Family - Meals",
     "Menchie's Frozen Yogurt": "Family - Meals",
+    "Menlo Swim & Sport": "Family - Child Extracurricular",
     "Microsoft 365 Home": "Family - Subscriptions",
     "Mollie Stone's": "Family - Groceries",
     "Neighbor's Corner": "Family - Meals",
