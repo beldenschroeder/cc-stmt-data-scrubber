@@ -57,6 +57,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Groovy Goose": "Family - Meals",
     "H&R Block tax software": "Family - Other Losses",
     "Hal's Office": "Family - Meals",
+    "Hidden Star Orchards": "Family - Groceries",
     "Highwire Coffee Roasters": "Family - Meals",
     "HMB Coffee": "Family - Meals",
     "Impark": "Family - Parking",

@@ -63,6 +63,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Groovy Goose": r"\bGROOVY GOOSE\b",
     "FasTrak": r"\bFASTRAK\b",
     "H&R Block tax software": r"\bH&amp;R BLOCK SOFTWARE\b",
+    "Hidden Star Orchards": r"\bHIDDEN STAR ORCHARDS\b",
     "Hal's Office": r"\bHAL'S OFFICE\b",
     "Highwire Coffee Roasters": r"\bHIGHWIRE COFFEE ROAST\b",
     "HMB Coffee": r"\bHMB COFFEE\b",
