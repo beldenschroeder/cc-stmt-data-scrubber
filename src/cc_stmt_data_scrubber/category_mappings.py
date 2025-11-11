@@ -69,6 +69,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "La Lucha": "Family - Meals",
     "Lost Coffee": "Family - Meals",
     "Lucile Packard Children's Hospital": "Family - Health",
+    "Luna's Farm": "Family - Groceries",
     "Lunardi's": "Family - Groceries",
     "Lyft": "Family - Travel",
     "Made out of Dough": "Family - Groceries",

@@ -111,6 +111,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Ticino": r"\bTICINO\b",
     "Trader Joe's": r"\bTRADER JOE S\b",
     "TuTu School": r"\bTUTU SCHOOL\b",
+    "Luna's Farm": r"\bLUNAS FARMS\b",
     "Vina Enoteca": r"\bVINA ENOTECA\b",
     "Viva la Tarte": r"\bVIVE LA TARTE\b",
     "Waste (Recology)": r"\bRECOLOGY\b",
