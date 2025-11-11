@@ -111,6 +111,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Starbucks": "Family - Meals",
     "Talons": "Family - Meals",
     "Temple Coffee": "Family - Meals",
+    "Thai Tamerind": "Family - Meals",
     "The Frenchy Gourmet": "Family - Groceries",
     "The Home Depot": "Family - Home Improvement",
     "The Reading Bug": "Family - Child Other",
