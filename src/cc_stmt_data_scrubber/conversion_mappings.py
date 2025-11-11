@@ -53,6 +53,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Diddams Party & Toy Store": r"\bDIDDAMS PARTY\b",
     "Disney+ Premium": r"\bDisney Plus\b",
     "Doppio Zero": r"\bDOPPIO ZERO\b",
+    "Downtown Local": r"DOWNTOWN LOCAL\b",
     "Equator Coffees": r"\bEQUATOR COFFEES\b",
     "Flatbread Queen": r"\bFLATBREAD QUEEN\b",
     "Footsteps@Cipriani": r"\bFOOTSTEPS\b",

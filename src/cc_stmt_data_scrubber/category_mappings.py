@@ -46,6 +46,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Diddams Party & Toy Store": "Family - Child Other",
     "Disney+ Premium": "Family - Subscriptions",
     "Doppio Zero": "Family - Meals",
+    "Downtown Local": "Family - Meals",
     "Equator Coffees": "Family - Meals",
     "Flatbread Queen": "Family - Meals",
     "Footsteps@Cipriani": "Family - Child Schooling",
