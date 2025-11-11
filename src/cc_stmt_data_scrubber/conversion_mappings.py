@@ -12,6 +12,7 @@ COMMON_DESC_CONVERSIONS = {
     "Kindle Services": r"\bKindle Svcs\b",
     "Lunardi's": r"\bLUNARDI'S\b",
     "Noe Café": r"NOE CAFE\b",
+    "Starbucks": r"\bSTARBUCKS\b",
 }
 
 FAMILY_DESC_CONVERSIONS = {
@@ -27,6 +28,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Alto Pharmacy": r"\bALTO PHARMACY\b",
     "Amazon": r"\bAMAZON\b(?!.*PRIME\b)|\bAMZN\b",
     "Amazon Prime": r"\bAMAZON PRIME\b",
+    "Andytown Coffee Roasters": r"\bANDYTOWN COFFEE\b",
     "Annie's Hot Dogs": r"\bANNIE'S HOT DOGS\b",
     "B40 Café": r"\bB40 CAFE\b",
     "Barista Underground": r"\bBARISTA UNDERGROU\b",
@@ -143,7 +145,6 @@ PERSONAL_DESC_CONVERSIONS = {
     "L.L. Bean": r"\bLlbean\b",
     "Patagonia": r"\bPATAGONIA\b",
     "Pink Owl Coffee": r"\bPINK OWL COFFEE\b",
-    "Starbucks": r"\bSTARBUCKS\b",
     "Strava Summit": r"\bSTRAVA\b",
     "Tacx": r"\bGARMIN\b",
     "The Atlantic": r"\bThe Atlantic\b",
