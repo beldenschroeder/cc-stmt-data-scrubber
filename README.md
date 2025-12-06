@@ -9,23 +9,37 @@ and finance.
 ## Setup
 
 1. Clone the repository
-2. Create virtual environment: `python -m venv venv`
-3. Activate virtual environment:
-   - Linux/Mac: `source venv/bin/activate`
-   - Windows: `venv\Scripts\activate`
-4. Install the package in editable mode: `pip install -e .`
-5. (Optional) For development, install with dev dependencies: `pip install -e ".[dev]"`
-6. (Optional) For development, setup pre-commit hooks: `pre-commit install`
+2. Ensure you have [Poetry installed](https://python-poetry.org/docs/#installation)
+3. Install dependencies and create virtual environment: `poetry install`
+4. (Optional) For development, setup pre-commit hooks: `poetry run pre-commit install`
+
+### Build the Project
+
+To build the executable binary:
+
+```bash
+poetry build
+```
+
+This creates distribution files in the `dist/` directory.
 
 ## Usage
 
-Run the application:
+Run the application using Poetry:
 
 ```bash
+poetry run cc-scrubber <cc_type> <input_file> <output_file>
+```
+
+Or activate Poetry's shell environment first:
+
+```bash
+poetry shell
 cc-scrubber <cc_type> <input_file> <output_file>
 ```
 
 Where:
+
 - `cc_type`: Credit card type - either `family` or `personal`
 - `input_file`: Path to the input CSV file
 - `output_file`: Path to the output CSV file
@@ -33,19 +47,19 @@ Where:
 Example (Mac):
 
 ```bash
-cc-scrubber personal "/Users/[user]/Downloads/statement.csv" "/Users/[user]/Desktop/output.csv"
+poetry run cc-scrubber personal "/Users/[user]/Downloads/statement.csv" "/Users/[user]/Desktop/output.csv"
 ```
 
 Example (Windows):
 
 ```bash
-cc-scrubber personal "C:\Users\[user]\Downloads\statement.csv" "C:\Users\[user]\Desktop\output.csv"
+poetry run cc-scrubber personal "C:\Users\[user]\Downloads\statement.csv" "C:\Users\[user]\Desktop\output.csv"
 ```
 
 Alternatively, you can run it as a Python module:
 
 ```bash
-python -m cc_stmt_data_scrubber.main <cc_type> <input_file> <output_file>
+poetry run python -m cc_stmt_data_scrubber.main <cc_type> <input_file> <output_file>
 ```
 
 ## Testing
@@ -55,30 +69,31 @@ The project includes comprehensive unit tests using pytest.
 ### Run All Tests
 
 ```bash
-pytest tests/ -v
+poetry run pytest tests/ -v
 ```
 
 ### Run Specific Test File
 
 ```bash
-pytest tests/test_value_converter.py -v
+poetry run pytest tests/test_value_converter.py -v
 ```
 
 ### Run Specific Test Class
 
 ```bash
-pytest tests/test_csv_processor.py::TestProcessRow -v
+poetry run pytest tests/test_csv_processor.py::TestProcessRow -v
 ```
 
 ### Run with Short Traceback
 
 ```bash
-pytest tests/ -v --tb=short
+poetry run pytest tests/ -v --tb=short
 ```
 
 ### Test Coverage
 
 The test suite includes 67 tests covering:
+
 - Value conversion functions
 - Description and category mappings
 - CSV configuration
@@ -88,25 +103,28 @@ The test suite includes 67 tests covering:
 
 ## Development
 
-### Install Development Dependencies
-
-Install the package with dev dependencies (pytest, black, flake8, isort, pre-commit):
-
-```bash
-pip install -e ".[dev]"
-```
-
 ### Pre-commit Hooks
 
 This project uses `pre-commit` to automatically format and lint code before each commit.
 
-**Setup pre-commit hooks:**
+**Install pre-commit (if not already installed):**
+
+Since `pre-commit` is a dev dependency, it's installed with Poetry:
 
 ```bash
-pre-commit install
+poetry install
+```
+
+**Setup pre-commit hooks:**
+
+Once installed, activate the hooks in your repository:
+
+```bash
+poetry run pre-commit install
 ```
 
 **What it does:**
+
 - Automatically runs `black` to format code
 - Runs `flake8` to check code style
 - Runs `isort` to sort imports
@@ -116,10 +134,10 @@ pre-commit install
 
 ```bash
 # Run on all files
-pre-commit run --all-files
+poetry run pre-commit run --all-files
 
 # Run on staged files only
-pre-commit run
+poetry run pre-commit run
 ```
 
 **Skip hooks (when needed):**
@@ -136,17 +154,17 @@ If you prefer to run tools manually:
 **Format code:**
 
 ```bash
-black src/ tests/
+poetry run black src/ tests/
 ```
 
 **Sort imports:**
 
 ```bash
-isort src/ tests/
+poetry run isort src/ tests/
 ```
 
 **Lint code:**
 
 ```bash
-flake8 src/ tests/
+poetry run flake8 src/ tests/
 ```
