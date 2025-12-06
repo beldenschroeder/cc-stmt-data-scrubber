@@ -116,6 +116,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Stanford Health Care": r"\bSTANFORD HEALTH CARE\b",
     "Talons": r"\bTALONS\b",
     "Temple Coffee": r"\bTEMPLE COFFEE\b",
+    "The Epicurean Trader": r"\bTHE EPICUREAN TRADER\b",
     "The Frenchy Gourmet": r"\bTHE FRENCHY GOURMET\b",
     "Thai Tamarind": r"\bTHAI TAMARIND\b",
     "The Home Depot": r"\bHOME DEPOT\b",
