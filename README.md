@@ -47,13 +47,13 @@ Where:
 Example (Mac):
 
 ```bash
-poetry run cc-scrubber personal "/Users/[user]/Downloads/statement.csv" "/Users/[user]/Desktop/output.csv"
+poetry run cc-scrubber personal "/Users/[user]/Downloads/personal-cc-statement-2025-12-05.csv.csv" "/Users/[user]/Desktop/personal-cc-statement-output.csv"
 ```
 
 Example (Windows):
 
 ```bash
-poetry run cc-scrubber personal "C:\Users\[user]\Downloads\statement.csv" "C:\Users\[user]\Desktop\output.csv"
+poetry run cc-scrubber personal "C:\Users\[user]\Downloads\personal-cc-statement-2025-12-05.csv" "C:\Users\[user]\Desktop\personal-cc-statement-output.csv"
 ```
 
 Alternatively, you can run it as a Python module:
