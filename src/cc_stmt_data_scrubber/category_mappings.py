@@ -139,6 +139,7 @@ PERSONAL_CATEGORY_MAPPINGS = {
     "Calvin Klein": "Clothes",
     "Fjällräven": "Clothes",
     "Fooda": "Meals",
+    "GitHub Copilot": "Subscriptions",
     "J.Crew": "Clothes",
     "KCSM membership": "Subscriptions",
     "Kindle Services": "Other Losses",
