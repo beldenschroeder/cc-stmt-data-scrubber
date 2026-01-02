@@ -47,7 +47,7 @@ Where:
 Example (Mac):
 
 ```bash
-poetry run cc-scrubber personal "/Users/[user]/Downloads/personal-cc-statement-2025-12-05.csv.csv" "/Users/[user]/Desktop/personal-cc-statement-output.csv"
+poetry run cc-scrubber personal "/Users/[user]/Downloads/personal-cc-statement-2025-12-05.csv" "/Users/[user]/Desktop/personal-cc-statement-output.csv"
 ```
 
 Example (Windows):
