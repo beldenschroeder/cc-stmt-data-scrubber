@@ -74,6 +74,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "La Bicyclette": "Family - Meals",
     "La Burgueria": "Family - Meals",
     "La Lucha": "Family - Meals",
+    "LAZ Parking": "Family - Parking",
     "Lost Coffee": "Family - Meals",
     "Lucile Packard Children's Hospital": "Family - Health",
     "Luna's Farm": "Family - Groceries",

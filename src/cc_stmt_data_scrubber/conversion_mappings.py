@@ -81,6 +81,7 @@ FAMILY_DESC_CONVERSIONS = {
     "La Bicyclette": r"\bLA BICYCLETTE\b",
     "La Boulangerie": r"\bLA BOULANGERIE\b",
     "La Lucha": r"\bLA LUCHA\b",
+    "LAZ Parking": r"\bLAZ PARKING\b",
     "Lost Coffee": r"\bLOST COFFEE\b",
     "Lucile Packard Children's Hospital": r"\bLUCILE PACKARD CHILDRENS\b",
     "Lyft": r"\bLYFT\b",
