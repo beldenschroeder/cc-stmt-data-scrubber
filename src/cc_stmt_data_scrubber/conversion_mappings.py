@@ -37,6 +37,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Ben Tre": r"\bBEN TRE\b",
     "Berkeley Bowl": r"\bBERKELEY BOWL\b",
     "Bi-Rite Market": r"\bBI-RITE MARKET\b",
+    "Bloomsgiving": r"BLOOMSGIVING\b",
     "Blue Bottle Coffee": r"\bBLUE BOTTLE\b",
     "Bookworks": r"\bBOOKWORKS\b",
     "Broadway Babies and Kids": r"\bBroadwayBabiesandKids\b",

@@ -29,6 +29,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Ben Tre": "Family - Meals",
     "Berkeley Bowl": "Family - Groceries",
     "Bi-Rite Market": "Family - Groceries",
+    "Bloomsgiving": "Family - Meals",
     "Blue Bottle Coffee": "Family - Meals",
     "Bookworks": "",
     "Broadway Babies and Kids": "Family - Child Extracurricular",
