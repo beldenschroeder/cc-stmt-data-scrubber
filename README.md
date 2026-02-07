@@ -9,32 +9,34 @@ and finance.
 ## Setup
 
 1. Clone the repository
-2. Ensure you have [Poetry installed](https://python-poetry.org/docs/#installation)
-3. Install dependencies and create virtual environment: `poetry install`
-4. (Optional) For development, setup pre-commit hooks: `poetry run pre-commit install`
+2. Ensure you have [uv installed](https://docs.astral.sh/uv/getting-started/installation/)
+3. Create virtual environment and install dependencies: `uv venv && uv pip install -e ".[dev]"`
+4. (Optional) For development, setup pre-commit hooks: `uv run pre-commit install`
 
 ### Build the Project
 
 To build the executable binary:
 
 ```bash
-poetry build
+uv build
 ```
 
 This creates distribution files in the `dist/` directory.
 
 ## Usage
 
-Run the application using Poetry:
+Run the application using uv:
 
 ```bash
-poetry run cc-scrubber <cc_type> <input_file> <output_file>
+uv run cc-scrubber <cc_type> <input_file> <output_file>
 ```
 
-Or activate Poetry's shell environment first:
+Or activate uv's virtual environment first:
 
 ```bash
-poetry shell
+source .venv/bin/activate  # On macOS/Linux
+# or
+.venv\Scripts\activate  # On Windows
 cc-scrubber <cc_type> <input_file> <output_file>
 ```
 
@@ -45,22 +47,23 @@ Where:
 - `output_file`: Path to the output CSV file
 
 Example (Mac):
+uv run cc-scrubber personal "/Users/[user]/Downloads/personal-cc-statement-2025-12-05.csv" "/Users/[user]/Desktop/personal-cc-statement-output.csv"
 
-```bash
-poetry run cc-scrubber personal "/Users/[user]/Downloads/personal-cc-statement-2025-12-05.csv" "/Users/[user]/Desktop/personal-cc-statement-output.csv"
-```
+````
 
 Example (Windows):
 
 ```bash
-poetry run cc-scrubber personal "C:\Users\[user]\Downloads\personal-cc-statement-2025-12-05.csv" "C:\Users\[user]\Desktop\personal-cc-statement-output.csv"
-```
+uv run cc-scrubber personal "C:\Users\[user]\Downloads\personal-cc-statement-2025-12-05.csv" "C:\Users\[user]\Desktop\personal-cc-statement-output.csv"
+````
 
 Alternatively, you can run it as a Python module:
 
+````bash
+uv
 ```bash
 poetry run python -m cc_stmt_data_scrubber.main <cc_type> <input_file> <output_file>
-```
+````
 
 ## Testing
 
@@ -68,27 +71,29 @@ The project includes comprehensive unit tests using pytest.
 
 ### Run All Tests
 
-```bash
-poetry run pytest tests/ -v
-```
+uv run pytest tests/ -v
+
+````
 
 ### Run Specific Test File
 
 ```bash
-poetry run pytest tests/test_value_converter.py -v
-```
+uv run pytest tests/test_value_converter.py -v
+````
 
 ### Run Specific Test Class
 
 ```bash
-poetry run pytest tests/test_csv_processor.py::TestProcessRow -v
+uv run pytest tests/test_csv_processor.py::TestProcessRow -v
 ```
 
 ### Run with Short Traceback
 
+````bash
+uv
 ```bash
 poetry run pytest tests/ -v --tb=short
-```
+````
 
 ### Test Coverage
 
@@ -107,12 +112,10 @@ The test suite includes 67 tests covering:
 
 This project uses `pre-commit` to automatically format and lint code before each commit.
 
-**Install pre-commit (if not already installed):**
-
-Since `pre-commit` is a dev dependency, it's installed with Poetry:
+**Install pre-commit (if not already installed):**uv:
 
 ```bash
-poetry install
+uv pip install pre-commit
 ```
 
 **Setup pre-commit hooks:**
@@ -120,7 +123,7 @@ poetry install
 Once installed, activate the hooks in your repository:
 
 ```bash
-poetry run pre-commit install
+uv run pre-commit install
 ```
 
 **What it does:**
@@ -134,10 +137,10 @@ poetry run pre-commit install
 
 ```bash
 # Run on all files
-poetry run pre-commit run --all-files
+uv run pre-commit run --all-files
 
 # Run on staged files only
-poetry run pre-commit run
+uv run pre-commit run
 ```
 
 **Skip hooks (when needed):**
@@ -154,17 +157,19 @@ If you prefer to run tools manually:
 **Format code:**
 
 ```bash
-poetry run black src/ tests/
+uv run black src/ tests/
 ```
 
 **Sort imports:**
 
 ```bash
-poetry run isort src/ tests/
+uv run isort src/ tests/
 ```
 
 **Lint code:**
 
+````bash
+uv
 ```bash
 poetry run flake8 src/ tests/
-```
+````
