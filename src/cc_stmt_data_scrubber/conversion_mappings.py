@@ -171,7 +171,8 @@ _DESC_CONVERSIONS_REGISTRY = {
 def register_desc_conversions(cc_type: str, conversions: Dict[str, str]) -> None:
     """Register description conversions for a new card type.
 
-    This allows extending the system with new card types without modifying existing code.
+    This allows extending the system with new card types without modifying
+    existing code.
 
     Args:
         cc_type: The credit card type identifier.

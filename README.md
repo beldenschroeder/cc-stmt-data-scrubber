@@ -59,11 +59,9 @@ uv run cc-scrubber personal "C:\Users\[user]\Downloads\personal-cc-statement-202
 
 Alternatively, you can run it as a Python module:
 
-````bash
-uv
 ```bash
-poetry run python -m cc_stmt_data_scrubber.main <cc_type> <input_file> <output_file>
-````
+uv run python -m cc_stmt_data_scrubber.main <cc_type> <input_file> <output_file>
+```
 
 ## Testing
 
@@ -71,15 +69,15 @@ The project includes comprehensive unit tests using pytest.
 
 ### Run All Tests
 
+```bash
 uv run pytest tests/ -v
-
-````
+```
 
 ### Run Specific Test File
 
 ```bash
 uv run pytest tests/test_value_converter.py -v
-````
+```
 
 ### Run Specific Test Class
 
@@ -89,11 +87,9 @@ uv run pytest tests/test_csv_processor.py::TestProcessRow -v
 
 ### Run with Short Traceback
 
-````bash
-uv
 ```bash
-poetry run pytest tests/ -v --tb=short
-````
+uv run pytest tests/ -v --tb=short
+```
 
 ### Test Coverage
 
@@ -112,7 +108,9 @@ The test suite includes 67 tests covering:
 
 This project uses `pre-commit` to automatically format and lint code before each commit.
 
-**Install pre-commit (if not already installed):**uv:
+**Install pre-commit (if not already installed):**
+
+Since `pre-commit` is a dev dependency, it's installed with uv:
 
 ```bash
 uv pip install pre-commit
@@ -128,9 +126,7 @@ uv run pre-commit install
 
 **What it does:**
 
-- Automatically runs `black` to format code
-- Runs `flake8` to check code style
-- Runs `isort` to sort imports
+- Automatically runs `ruff` to format and lint code
 - Checks for trailing whitespace, large files, merge conflicts, etc.
 
 **Manual run (optional):**
@@ -154,22 +150,12 @@ git commit --no-verify -m "Emergency fix"
 
 If you prefer to run tools manually:
 
-**Format code:**
+**Format and lint code:**
 
 ```bash
-uv run black src/ tests/
+# Check and fix issues
+uv run ruff check --fix src/ tests/
+
+# Format code
+uv run ruff format src/ tests/
 ```
-
-**Sort imports:**
-
-```bash
-uv run isort src/ tests/
-```
-
-**Lint code:**
-
-````bash
-uv
-```bash
-poetry run flake8 src/ tests/
-````

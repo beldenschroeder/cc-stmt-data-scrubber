@@ -170,7 +170,8 @@ _CATEGORY_MAPPINGS_REGISTRY = {
 def register_category_mappings(cc_type: str, mappings: Dict[str, str]) -> None:
     """Register category mappings for a new card type.
 
-    This allows extending the system with new card types without modifying existing code.
+    This allows extending the system with new card types without modifying
+    existing code.
 
     Args:
         cc_type: The credit card type identifier.
