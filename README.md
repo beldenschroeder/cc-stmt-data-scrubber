@@ -8,154 +8,67 @@ and finance.
 
 ## Setup
 
-1. Clone the repository
-2. Ensure you have [uv installed](https://docs.astral.sh/uv/getting-started/installation/)
-3. Create virtual environment and install dependencies: `uv venv && uv pip install -e ".[dev]"`
-4. (Optional) For development, setup pre-commit hooks: `uv run pre-commit install`
-
-### Build the Project
-
-To build the executable binary:
-
-```bash
-uv build
-```
-
-This creates distribution files in the `dist/` directory.
+1. Ensure you have [uv installed](https://docs.astral.sh/uv/getting-started/installation/)
+2. Clone the repository
+3. Install dependencies: `uv sync`
+4. (Optional) Setup pre-commit hooks: `uv run pre-commit install`
 
 ## Usage
 
-Run the application using uv:
+### Option 1: Command-Line Arguments
 
 ```bash
-uv run cc-scrubber <cc_type> <input_file> <output_file>
+uv run cc-scrubber --cc-type personal --input-file input.csv --output-file output.csv
 ```
 
-Or activate uv's virtual environment first:
+**Parameters:**
+- `--cc-type`: Credit card type (`family` or `personal`)
+- `--input-file`: Path to input CSV file
+- `--output-file`: Path to output CSV file
+
+### Option 2: Using .env File
+
+Create a `.env` file (copy from `.env.example`):
 
 ```bash
-source .venv/bin/activate  # On macOS/Linux
-# or
-.venv\Scripts\activate  # On Windows
-cc-scrubber <cc_type> <input_file> <output_file>
+CC_TYPE=personal
+INPUT_FILE=/path/to/input.csv
+OUTPUT_FILE=/path/to/output.csv
 ```
 
-Where:
-
-- `cc_type`: Credit card type - either `family` or `personal`
-- `input_file`: Path to the input CSV file
-- `output_file`: Path to the output CSV file
-
-Example (Mac):
-uv run cc-scrubber personal "/Users/[user]/Downloads/personal-cc-statement-2025-12-05.csv" "/Users/[user]/Desktop/personal-cc-statement-output.csv"
-
-````
-
-Example (Windows):
+Then run without arguments:
 
 ```bash
-uv run cc-scrubber personal "C:\Users\[user]\Downloads\personal-cc-statement-2025-12-05.csv" "C:\Users\[user]\Desktop\personal-cc-statement-output.csv"
-````
-
-Alternatively, you can run it as a Python module:
-
-```bash
-uv run python -m cc_stmt_data_scrubber.main <cc_type> <input_file> <output_file>
+uv run cc-scrubber
 ```
+
+Command-line arguments override `.env` values.
 
 ## Testing
 
-The project includes comprehensive unit tests using pytest.
-
-### Run All Tests
-
+Run all tests:
 ```bash
 uv run pytest tests/ -v
 ```
 
-### Run Specific Test File
-
+Run specific test file:
 ```bash
 uv run pytest tests/test_value_converter.py -v
 ```
 
-### Run Specific Test Class
-
-```bash
-uv run pytest tests/test_csv_processor.py::TestProcessRow -v
-```
-
-### Run with Short Traceback
-
-```bash
-uv run pytest tests/ -v --tb=short
-```
-
-### Test Coverage
-
-The test suite includes 67 tests covering:
-
-- Value conversion functions
-- Description and category mappings
-- CSV configuration
-- CSV file processing
-- Command-line argument parsing
-- Error handling and edge cases
+The test suite includes 67 tests covering value conversion, CSV processing, argument parsing, and error handling.
 
 ## Development
 
-### Pre-commit Hooks
+### Linting and Formatting
 
-This project uses `pre-commit` to automatically format and lint code before each commit.
-
-**Install pre-commit (if not already installed):**
-
-Since `pre-commit` is a dev dependency, it's installed with uv:
-
+Run manually:
 ```bash
-uv pip install pre-commit
+uv run ruff check --fix src/ tests/
+uv run ruff format src/ tests/
 ```
 
-**Setup pre-commit hooks:**
-
-Once installed, activate the hooks in your repository:
-
+Or use pre-commit hooks (auto-runs on commit):
 ```bash
 uv run pre-commit install
-```
-
-**What it does:**
-
-- Automatically runs `ruff` to format and lint code
-- Checks for trailing whitespace, large files, merge conflicts, etc.
-
-**Manual run (optional):**
-
-```bash
-# Run on all files
-uv run pre-commit run --all-files
-
-# Run on staged files only
-uv run pre-commit run
-```
-
-**Skip hooks (when needed):**
-
-```bash
-# Skip all hooks for emergency commits
-git commit --no-verify -m "Emergency fix"
-```
-
-### Manual Formatting and Linting
-
-If you prefer to run tools manually:
-
-**Format and lint code:**
-
-```bash
-# Check and fix issues
-uv run ruff check --fix src/ tests/
-
-# Format code
-uv run ruff format src/ tests/
 ```
