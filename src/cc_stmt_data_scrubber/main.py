@@ -62,7 +62,7 @@ Examples:
     args = parser.parse_args()
 
     # Validate that all required arguments are provided
-    missing_args = []
+    missing_args: list[str] = []
     if not args.cc_type:
         missing_args.append("--cc-type (or CC_TYPE in .env)")
     if not args.input_file:
