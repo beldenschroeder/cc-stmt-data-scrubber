@@ -140,6 +140,7 @@ FAMILY_DESC_CONVERSIONS = {
 }
 
 PERSONAL_DESC_CONVERSIONS = {
+    "Apple Cash": r"\bDaily Cash Adjustment\b",
     "Amazon Web Services": r"\bAMAZON WEB SERVICES\b",
     "Audible": r"\bAUDIBLE\b",
     "Calvin Klein": r"\bCalvin Klein\b",

@@ -21,6 +21,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Amazon Prime": "Family - Subscriptions",
     "Andytown Coffee Roasters": "Family - Meals",
     "Annie's Hot Dogs": "Family - Meals",
+    "Apple Cash": "",
     "B40 Café": "Family - Meals",
     "Barista Underground": "Family - Groceries",
     "Barnes & Noble": "Family - Other Losses",
