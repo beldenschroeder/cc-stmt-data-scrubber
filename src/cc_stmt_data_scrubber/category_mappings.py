@@ -107,6 +107,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Royo Bread": "Family - Groceries",
     "Russian School of Math": "Family - Child Schooling",
     "Safeway": "Family - Groceries",
+    "Saint Frank Coffee": "Family - Meals",
     "Santa Cruz City Parking": "Family - Parking",
     "SchoolForce": "Family - Child Schooling",
     "Shell": "Family - Vehicle Fuel",

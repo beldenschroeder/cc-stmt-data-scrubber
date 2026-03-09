@@ -111,6 +111,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Rodriguez Bros. Ranch": r"\bRODRIGUEZ BROS.RANCH\b",
     "Russian School of Math": r"\bRSM - Peninsula\b",
     "Safeway": r"\bSAFEWAY\b",
+    "Saint Frank Coffee": r"SAINT FRANK COFFEE\b",
     "Santa Cruz City Parking": r"\bSANTA CRUZ CITY PARKING\b",
     "SchoolForce": r"\bSCHOOLFORCE\b",
     "Shell": r"\bSHELL\b",
