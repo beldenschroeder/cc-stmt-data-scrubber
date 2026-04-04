@@ -148,6 +148,7 @@ PERSONAL_DESC_CONVERSIONS = {
     "Calvin Klein": r"\bCalvin Klein\b",
     "Fjällräven": r"\bFJALLRAVEN\b",
     "Fooda": r"\bFOODA\b",
+    "Gap": r"\bGAPOUTLET.COM\b",
     "GitHub Copilot Pro": r"\bGITHUB, INC.\b",
     "Grammarly": r"\bGRAMMARLY",
     "J.Crew": r"\bJ Crew\b",
