@@ -139,6 +139,7 @@ FAMILY_CATEGORY_MAPPINGS = {
 PERSONAL_CATEGORY_MAPPINGS = {
     "Amazon Web Services": "Other Losses",
     "Audible": "Subscriptions",
+    "Banana Republic": "Clothes",
     "Barnes & Noble": "Meals",
     "Calvin Klein": "Clothes",
     "Fjällräven": "Clothes",

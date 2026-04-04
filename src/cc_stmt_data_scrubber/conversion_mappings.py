@@ -144,6 +144,7 @@ PERSONAL_DESC_CONVERSIONS = {
     "Apple Cash": r"\bDaily Cash Adjustment\b",
     "Amazon Web Services": r"\bAMAZON WEB SERVICES\b",
     "Audible": r"\bAUDIBLE\b",
+    "Banana Republic": r"\bBRFACTORY.com\b",
     "Calvin Klein": r"\bCalvin Klein\b",
     "Fjällräven": r"\bFJALLRAVEN\b",
     "Fooda": r"\bFOODA\b",
