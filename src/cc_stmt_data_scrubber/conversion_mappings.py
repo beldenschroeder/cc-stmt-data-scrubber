@@ -9,6 +9,7 @@ from typing import Dict
 # Common conversions shared by both personal and family
 COMMON_DESC_CONVERSIONS = {
     "Barnes & Noble": r"\bBARNES &amp; NOBLE\b",
+    "Fox & Kit": r"FOX &amp; KIT\b",
     "Kindle Services": r"\bKindle Svcs\b",
     "Lunardi's": r"\bLUNARDI'S\b",
     "Noe Café": r"NOE CAFE\b",
