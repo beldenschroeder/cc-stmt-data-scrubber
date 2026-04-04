@@ -151,6 +151,7 @@ PERSONAL_CATEGORY_MAPPINGS = {
     "KQED membership": "Subscriptions",
     "L.L. Bean": "Clothes",
     "Lunardi's": "Meals",
+    "Macy's": "Clothes",
     "Noe Café": "Meals",
     "Patagonia": "Clothes",
     "Pink Owl Coffee": "Meals",

@@ -153,6 +153,7 @@ PERSONAL_DESC_CONVERSIONS = {
     "KCSM membership": r"\bKcsm Jazz 91\b",
     "KQED membership": r"\bKQED\b",
     "L.L. Bean": r"\bLlbean\b",
+    "Macy's": r"\bMACYS\b",
     "Patagonia": r"\bPATAGONIA\b",
     "Pink Owl Coffee": r"\bPINK OWL COFFEE\b",
     "Strava Summit": r"\bSTRAVA\b",
