@@ -111,6 +111,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Saint Frank Coffee": "Family - Meals",
     "Santa Cruz City Parking": "Family - Parking",
     "SchoolForce": "Family - Child Schooling",
+    "Sextant Coffee Roasters": "Family - Meals",
     "Shell": "Family - Vehicle Fuel",
     "SodaStream": "Family - Groceries",
     "Spectra Coffee": "Family - Meals",

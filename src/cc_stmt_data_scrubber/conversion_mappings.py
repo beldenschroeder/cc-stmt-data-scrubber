@@ -115,6 +115,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Saint Frank Coffee": r"SAINT FRANK COFFEE\b",
     "Santa Cruz City Parking": r"\bSANTA CRUZ CITY PARKING\b",
     "SchoolForce": r"\bSCHOOLFORCE\b",
+    "Sextant Coffee Roasters": r"SEXTANT COFFEE ROASTE\b",
     "Shell": r"\bSHELL\b",
     "SodaStream": r"\bSODASTREAM\b",
     "Spectra Coffee": r"\bSPECTRA COFFEE\b",
