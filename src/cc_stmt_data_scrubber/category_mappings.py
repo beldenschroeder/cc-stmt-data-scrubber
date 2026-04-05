@@ -117,6 +117,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "SPRO Coffee Lab": "Family - Meals",
     "Stanford Health Care": "Family - Health",
     "Starbucks": "Family - Meals",
+    "Starter Bakery": "Family - Meals",
     "Talons": "Family - Meals",
     "Temple Coffee": "Family - Meals",
     "Thai Tamerind": "Family - Meals",

@@ -120,6 +120,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Spectra Coffee": r"\bSPECTRA COFFEE\b",
     "SPRO Coffee Lab": r"\bSPRO\b",
     "Stanford Health Care": r"\bSTANFORD HEALTH CARE\b",
+    "Starter Bakery": r"STARTER BAKERY\b",
     "Talons": r"\bTALONS\b",
     "Temple Coffee": r"\bTEMPLE COFFEE\b",
     "The Epicurean Trader": r"\bTHE EPICUREAN TRADER\b",
