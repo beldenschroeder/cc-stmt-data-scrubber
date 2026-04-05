@@ -55,7 +55,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Credit card payment": r"\bPayment Thank You - Web\b",
     "Crystal Springs Produce": r"\bCRYSTAL SPRINGS PRODUCE\b",
     "Diddams Party & Toy Store": r"\bDIDDAMS PARTY\b",
-    "Disney+ Premium": r"\bDisney Plus\b",
+    "Disney+": r"\bDisneyPLUS\b",
     "Doppio Zero": r"\bDOPPIO ZERO\b",
     "Downtown Local": r"DOWNTOWN LOCAL\b",
     "Equator Coffees": r"\bEQUATOR COFFEES\b",

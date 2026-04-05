@@ -47,7 +47,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Credit card payment": "N/A",
     "Crystal Springs Produce": "Family - Groceries",
     "Diddams Party & Toy Store": "Family - Child Other",
-    "Disney+ Premium": "Family - Subscriptions",
+    "Disney+": "Family - Subscriptions",
     "Doppio Zero": "Family - Meals",
     "Downtown Local": "Family - Meals",
     "Equator Coffees": "Family - Meals",
