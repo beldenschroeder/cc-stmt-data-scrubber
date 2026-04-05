@@ -97,7 +97,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Neighbor's Corner": r"\bNEIGHBOR'S CORNER\b",
     "Netflix": r"\bNETFLIX.COM\b",
     "Oral-B": r"\bORAL B\b",
-    "Pérez Farms": r"PEREZ FARMS\b",
+    "Pérez Bros. Farms": r"PRZBROFARMS\b",
     "Pizzaria Luba": r"\bPIZZERIA LUBA\b",
     "Putnam Chevrolet": r"\bPUTNAM CHEVROLET\b",
     "Rally Gymnastics": r"\bRally Gymnastics\b",

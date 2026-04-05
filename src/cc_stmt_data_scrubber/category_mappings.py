@@ -94,7 +94,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Netflix": "Family - Subscriptions",
     "Noe Café": "Family - Meals",
     "Oral-B": "Family - Groceries",
-    "Pérez Farms": "Family - Groceries",
+    "Pérez Bros. Farms": "Family - Groceries",
     "Pizzaria Luba": "Family - Meals",
     "Putnam Chevrolet": "Family - Car Expenses",
     "Rally Gymnastics": "Family - Child Extracurricular",
