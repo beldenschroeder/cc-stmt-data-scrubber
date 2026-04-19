@@ -1,98 +1,60 @@
 """Main application entry point."""
 
-import argparse
-import os
 import sys
-from typing import Tuple
 
+import click
 from dotenv import load_dotenv
 
 from cc_stmt_data_scrubber.csv_processor import process_csv_file
 
 
-def parse_arguments() -> Tuple[str, str, str]:
-    """Parse and validate command-line arguments.
+class EnvDefaultCommand(click.Command):
+    """A Click command that loads .env before resolving defaults."""
 
-    Supports both command-line arguments and .env file configuration.
-    Command-line arguments take precedence over .env file values.
+    def invoke(self, ctx: click.Context) -> None:
+        load_dotenv()
+        super().invoke(ctx)
 
-    Returns:
-        Tuple of (card_type, input_file, output_file).
 
-    Raises:
-        SystemExit: If required arguments are missing or invalid.
+@click.command(cls=EnvDefaultCommand)
+@click.option(
+    "--cc-type",
+    type=click.Choice(["family", "personal"], case_sensitive=False),
+    envvar="CC_TYPE",
+    help="Credit card type (can be set in .env as CC_TYPE).",
+    required=True,
+)
+@click.option(
+    "--input-file",
+    type=click.Path(exists=True),
+    envvar="INPUT_FILE",
+    help="Path to the input CSV file (can be set in .env as INPUT_FILE).",
+    required=True,
+)
+@click.option(
+    "--output-file",
+    type=click.Path(),
+    envvar="OUTPUT_FILE",
+    help="Path to the output CSV file (can be set in .env as OUTPUT_FILE).",
+    required=True,
+)
+def main(cc_type: str, input_file: str, output_file: str) -> None:
+    """Credit Card Statement Data Scrubber.
+
+    Scrubs credit card statement CSV data and formats it for Excel import.
+    Options can also be provided via a .env file.
     """
-    # Load .env file if it exists
-    load_dotenv()
-
-    parser = argparse.ArgumentParser(
-        description="Credit Card Statement Data Scrubber",
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="""
-Examples:
-  # Using command-line arguments
-  cc-scrubber --cc-type personal --input-file statement.csv --output-file output.csv
-
-  # Using .env file (values can be overridden with command-line arguments)
-  cc-scrubber
-        """,
-    )
-
-    parser.add_argument(
-        "--cc-type",
-        dest="cc_type",
-        help="Credit card type: 'family' or 'personal' (can be set in .env as CC_TYPE)",
-        default=os.getenv("CC_TYPE"),
-    )
-
-    parser.add_argument(
-        "--input-file",
-        dest="input_file",
-        help="Path to the input CSV file (can be set in .env as INPUT_FILE)",
-        default=os.getenv("INPUT_FILE"),
-    )
-
-    parser.add_argument(
-        "--output-file",
-        dest="output_file",
-        help="Path to the output CSV file (can be set in .env as OUTPUT_FILE)",
-        default=os.getenv("OUTPUT_FILE"),
-    )
-
-    args = parser.parse_args()
-
-    # Validate that all required arguments are provided
-    missing_args: list[str] = []
-    if not args.cc_type:
-        missing_args.append("--cc-type (or CC_TYPE in .env)")
-    if not args.input_file:
-        missing_args.append("--input-file (or INPUT_FILE in .env)")
-    if not args.output_file:
-        missing_args.append("--output-file (or OUTPUT_FILE in .env)")
-
-    if missing_args:
-        parser.print_help()
-        print(f"\nError: Missing required arguments: {', '.join(missing_args)}")
-        sys.exit(1)
-
-    return args.cc_type, args.input_file, args.output_file
-
-
-def main() -> None:
-    """Run the main application."""
-    card_type, input_file, output_file = parse_arguments()
-
     try:
-        process_csv_file(card_type, input_file, output_file)
-        print("\nApplication finished successfully!")
+        process_csv_file(cc_type, input_file, output_file)
+        click.echo("\nApplication finished successfully!")
     except ValueError as e:
-        print(f"Error: {e}")
+        click.echo(f"Error: {e}", err=True)
         sys.exit(1)
     except FileNotFoundError as e:
-        print(f"Error: File not found - {e}")
+        click.echo(f"Error: File not found - {e}", err=True)
         sys.exit(1)
     except Exception as e:
-        print(f"Unexpected error: {e}")
+        click.echo(f"Unexpected error: {e}", err=True)
         sys.exit(1)
 
 
