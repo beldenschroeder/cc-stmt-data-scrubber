@@ -8,18 +8,46 @@ from dataclasses import dataclass
 
 @dataclass
 class ColumnConfig:
-    """Configuration for CSV column indices."""
+    """Configuration for CSV column indices.
 
+    Input columns: Transaction Date, Clearing Date, Description, Merchant,
+    Category, Type, Amount (USD), Purchased By
+    """
+
+    clearing_date_column: int
     description_column: int
+    merchant_column: int
     category_column: int
-    amount_column: int | None = None
+    amount_column: int
+
+
+OUTPUT_HEADER = [
+    "Date",
+    "Description",
+    "Amount",
+    "Statement Ending",
+    "Month Ending",
+    "Item Total",
+    "Debit",
+    "Credit",
+]
 
 
 # Column configurations for each card type
 CARD_TYPE_CONFIGS = {
-    "family": ColumnConfig(description_column=2, category_column=3, amount_column=5),
+    "family": ColumnConfig(
+        clearing_date_column=1,
+        description_column=2,
+        merchant_column=3,
+        category_column=4,
+        amount_column=6,
+    ),
     "personal": ColumnConfig(
-        description_column=3, category_column=4, amount_column=None
+        clearing_date_column=1,
+        description_column=2,
+        merchant_column=3,
+        category_column=4,
+        amount_column=6,
     ),
 }
 

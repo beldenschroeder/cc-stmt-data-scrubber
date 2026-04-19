@@ -1,9 +1,9 @@
 """Tests for csv_config module."""
 
 import pytest
-
 from cc_stmt_data_scrubber.csv_config import (
     CARD_TYPE_CONFIGS,
+    OUTPUT_HEADER,
     ColumnConfig,
     get_column_config,
 )
@@ -14,17 +14,35 @@ class TestColumnConfig:
 
     def test_column_config_creation(self):
         """Test creating a ColumnConfig instance."""
-        config = ColumnConfig(description_column=2, category_column=3, amount_column=5)
+        config = ColumnConfig(
+            clearing_date_column=1,
+            description_column=2,
+            merchant_column=3,
+            category_column=4,
+            amount_column=6,
+        )
+        assert config.clearing_date_column == 1
         assert config.description_column == 2
-        assert config.category_column == 3
-        assert config.amount_column == 5
-
-    def test_column_config_optional_amount(self):
-        """Test ColumnConfig with optional amount column."""
-        config = ColumnConfig(description_column=3, category_column=4)
-        assert config.description_column == 3
+        assert config.merchant_column == 3
         assert config.category_column == 4
-        assert config.amount_column is None
+        assert config.amount_column == 6
+
+
+class TestOutputHeader:
+    """Tests for OUTPUT_HEADER."""
+
+    def test_output_header_columns(self):
+        """Test that output header has the correct columns."""
+        assert OUTPUT_HEADER == [
+            "Date",
+            "Description",
+            "Amount",
+            "Statement Ending",
+            "Month Ending",
+            "Item Total",
+            "Debit",
+            "Credit",
+        ]
 
 
 class TestCardTypeConfigs:
@@ -45,16 +63,20 @@ class TestCardTypeConfigs:
     def test_family_config_values(self):
         """Test family configuration values."""
         config = CARD_TYPE_CONFIGS["family"]
+        assert config.clearing_date_column == 1
         assert config.description_column == 2
-        assert config.category_column == 3
-        assert config.amount_column == 5
+        assert config.merchant_column == 3
+        assert config.category_column == 4
+        assert config.amount_column == 6
 
     def test_personal_config_values(self):
         """Test personal configuration values."""
         config = CARD_TYPE_CONFIGS["personal"]
-        assert config.description_column == 3
+        assert config.clearing_date_column == 1
+        assert config.description_column == 2
+        assert config.merchant_column == 3
         assert config.category_column == 4
-        assert config.amount_column is None
+        assert config.amount_column == 6
 
 
 class TestGetColumnConfig:
@@ -63,16 +85,20 @@ class TestGetColumnConfig:
     def test_get_family_config(self):
         """Test getting family column configuration."""
         config = get_column_config("family")
+        assert config.clearing_date_column == 1
         assert config.description_column == 2
-        assert config.category_column == 3
-        assert config.amount_column == 5
+        assert config.merchant_column == 3
+        assert config.category_column == 4
+        assert config.amount_column == 6
 
     def test_get_personal_config(self):
         """Test getting personal column configuration."""
         config = get_column_config("personal")
-        assert config.description_column == 3
+        assert config.clearing_date_column == 1
+        assert config.description_column == 2
+        assert config.merchant_column == 3
         assert config.category_column == 4
-        assert config.amount_column is None
+        assert config.amount_column == 6
 
     def test_invalid_card_type_raises_error(self):
         """Test that invalid card type raises ValueError."""

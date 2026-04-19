@@ -7,7 +7,7 @@ name = "cc-stmt-data-scrubber"
 version = "0.1.0"
 description = "A tool for scrubbing credit card statement data."
 readme = "README.md"
-requires-python = ">=3.8.1"
+requires-python = ">=3.14"
 authors = [
     {name = "Belden Schroeder", email = "beldenschroeder@gmail.com"},
 ]
@@ -15,10 +15,7 @@ classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.14",
 ]
 dependencies = [
     "requests>=2.31.0",
@@ -43,7 +40,7 @@ packages = ["src/cc_stmt_data_scrubber"]
 
 [tool.ruff]
 line-length = 88
-target-version = "py38"
+target-version = "py312"
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I"]

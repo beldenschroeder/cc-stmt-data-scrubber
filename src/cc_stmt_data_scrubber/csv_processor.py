@@ -3,16 +3,15 @@
 import csv
 from typing import Iterable, List
 
-from .csv_config import ColumnConfig, get_column_config
-from .value_converter import (
-    convert_amount_value,
-    convert_desc_value,
-    map_desc_to_category,
-)
+from .csv_config import OUTPUT_HEADER, ColumnConfig, get_column_config
+from .value_converter import convert_desc_value
 
 
 def process_row(card_type: str, row: List[str], config: ColumnConfig) -> List[str]:
-    """Process a single CSV row by applying conversions.
+    """Process a single CSV row by applying conversions and restructuring output.
+
+    Output columns: Date, Description, Amount, Statement Ending, Month Ending,
+    Item Total, Debit, Credit
 
     Args:
         card_type: The credit card type ('family' or 'personal').
@@ -20,37 +19,35 @@ def process_row(card_type: str, row: List[str], config: ColumnConfig) -> List[st
         config: Column configuration with indices.
 
     Returns:
-        New list with conversions applied.
+        New list with the restructured output columns.
     """
-    # Create a copy to avoid mutating the input
-    processed_row = list(row)
-
     try:
-        # Process description column
-        if len(processed_row) > config.description_column:
-            processed_row[config.description_column] = convert_desc_value(
-                card_type, processed_row[config.description_column]
-            )
+        clearing_date = row[config.clearing_date_column]
+        merchant = row[config.merchant_column]
+        amount_str = row[config.amount_column]
 
-        # Process category column
-        if len(processed_row) > config.category_column:
-            processed_row[config.category_column] = map_desc_to_category(
-                card_type, processed_row[config.description_column]
-            )
+        # Apply description conversion to merchant value
+        description = convert_desc_value(card_type, merchant)
 
-        # Process amount column (if configured)
-        if (
-            config.amount_column is not None
-            and len(processed_row) > config.amount_column
-        ):
-            processed_row[config.amount_column] = convert_amount_value(
-                processed_row[config.amount_column]
-            )
+        # Parse amount
+        amount = float(amount_str)
+
+        # Split into debit/credit based on sign
+        debit = f"{amount:.2f}" if amount < 0 else ""
+        credit = f"{amount:.2f}" if amount >= 0 else ""
+
+        return [
+            clearing_date,
+            description,
+            f"{amount:.2f}",
+            "",
+            "",
+            "",
+            debit,
+            credit,
+        ]
     except (IndexError, ValueError):
-        # Handle cases where the column is missing or the value can't be converted
-        pass
-
-    return processed_row
+        return row
 
 
 def process_rows(card_type: str, rows: Iterable[List[str]]) -> Iterable[List[str]]:
@@ -87,6 +84,12 @@ def process_csv_file(card_type: str, input_filename: str, output_filename: str) 
     ) as outfile:
         reader = csv.reader(infile)
         writer = csv.writer(outfile)
+
+        # Skip input header
+        next(reader, None)
+
+        # Write output header
+        writer.writerow(OUTPUT_HEADER)
 
         # Delegate processing logic to process_rows()
         processed_rows = process_rows(card_type, reader)
