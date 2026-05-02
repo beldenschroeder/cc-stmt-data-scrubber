@@ -8,29 +8,43 @@ and finance.
 
 Requires Python 3.14+.
 
+## CSV Input Format
+
+The input CSV must be a transaction export downloaded from [JPMorgan Chase](https://www.chase.com/) online banking. Chase provides this file when you select "Download account activity" from a credit card account and choose the CSV format.
+
+The file must have the following columns in this order:
+
+| Column           | Description                                      |
+| ---------------- | ------------------------------------------------ |
+| Transaction Date | Date the transaction was made                    |
+| Clearing Date    | Date the transaction cleared                     |
+| Description      | Raw transaction description from Chase           |
+| Merchant         | Merchant name as identified by Chase             |
+| Category         | Chase-assigned spending category                 |
+| Type             | Transaction type (e.g. Purchase, Return)         |
+| Amount (USD)     | Transaction amount; negative for debits          |
+| Purchased By     | Cardholder name (relevant for family/joint cards)|
+
 ## CSV Output Format
 
-The tool reads the input CSV (with columns: Transaction Date, Clearing Date, Description, Merchant, Category, Type, Amount (USD), Purchased By) and produces an output CSV with the following columns:
+The tool produces an output CSV with the following columns:
 
-| Column           | Description                                                       |
-| ---------------- | ----------------------------------------------------------------- |
-| Date             | From the input "Clearing Date" column                             |
-| Description      | From the input "Merchant" column, with name normalization applied |
-| Amount           | The numeric amount, formatted to 2 decimal places                 |
-| Statement Ending | Empty (for manual entry in Excel)                                 |
-| Month Ending     | Empty (for manual entry in Excel)                                 |
-| Item Total       | Empty (for manual entry in Excel)                                 |
-| Debit            | The amount if it is negative, otherwise empty                     |
-| Credit           | The amount if it is zero or positive, otherwise empty             |
-
-All date and number values are formatted for direct Excel import.
+| Column           | Description                                                        |
+| ---------------- | ------------------------------------------------------------------ |
+| Date             | From the input "Clearing Date" column                              |
+| Description      | From the input "Merchant" column, with name normalization applied  |
+| Account          | Expense category derived from the merchant (e.g. "Meals")          |
+| Statement Ending | Empty (for manual entry in Excel)                                  |
+| Month Ending     | Empty (for manual entry in Excel)                                  |
+| Item Total       | Empty (for manual entry in Excel)                                  |
+| Debit            | The absolute amount if the transaction is a debit, otherwise empty |
+| Credit           | The amount if the transaction is a credit, otherwise empty         |
 
 ## Setup
 
 1. Ensure you have [uv installed](https://docs.astral.sh/uv/getting-started/installation/)
 2. Clone the repository
 3. Install dependencies: `uv sync`
-4. (Optional) Setup pre-commit hooks: `uv run pre-commit install`
 
 ## Usage
 
@@ -64,35 +78,6 @@ uv run cc-scrubber
 
 Command-line arguments override `.env` values.
 
-## Testing
+## Contributing
 
-Run all tests:
-
-```bash
-uv run pytest tests/ -v
-```
-
-Run specific test file:
-
-```bash
-uv run pytest tests/test_value_converter.py -v
-```
-
-The test suite includes 74 tests covering value conversion, CSV processing, argument parsing, and error handling.
-
-## Development
-
-### Linting and Formatting
-
-Run manually:
-
-```bash
-uv run ruff check --fix src/ tests/
-uv run ruff format src/ tests/
-```
-
-Or use pre-commit hooks (auto-runs on commit):
-
-```bash
-uv run pre-commit install
-```
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, testing, and linting instructions.
