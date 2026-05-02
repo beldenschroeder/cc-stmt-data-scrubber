@@ -31,7 +31,7 @@ dev = [
 ]
 
 [project.urls]
-Repository = "https://github.com/beldenschroeder/cc_stmt_data_scrubber"
+Repository = "https://github.com/beldenschroeder/cc-stmt-data-scrubber"
 
 [project.scripts]
 cc-scrubber = "cc_stmt_data_scrubber.main:main"

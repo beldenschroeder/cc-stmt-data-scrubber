@@ -7,16 +7,10 @@ from dotenv import load_dotenv
 
 from cc_stmt_data_scrubber.csv_processor import process_csv_file
 
-
-class EnvDefaultCommand(click.Command):
-    """A Click command that loads .env before resolving defaults."""
-
-    def invoke(self, ctx: click.Context) -> None:
-        load_dotenv()
-        super().invoke(ctx)
+load_dotenv()
 
 
-@click.command(cls=EnvDefaultCommand)
+@click.command()
 @click.option(
     "--cc-type",
     type=click.Choice(["family", "personal"], case_sensitive=False),
