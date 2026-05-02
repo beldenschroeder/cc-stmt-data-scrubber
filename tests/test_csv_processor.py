@@ -54,11 +54,11 @@ class TestProcessRow:
 
         assert result[0] == "01/16/2025"  # Date (from Clearing Date)
         assert result[1] == "Amazon Prime"  # Description (converted Merchant)
-        assert result[2] == "-100.50"  # Amount
+        assert result[2] == "Family - Subscriptions"  # Account
         assert result[3] == ""  # Statement Ending
         assert result[4] == ""  # Month Ending
         assert result[5] == ""  # Item Total
-        assert result[6] == "-100.50"  # Debit
+        assert result[6] == "100.50"  # Debit (positive)
         assert result[7] == ""  # Credit
 
     def test_process_family_row_credit(self):
@@ -77,7 +77,7 @@ class TestProcessRow:
         result = process_row("family", row, FAMILY_CONFIG)
 
         assert result[0] == "01/16/2025"  # Date
-        assert result[2] == "50.00"  # Amount
+        assert result[2] == ""  # Account (no mapping for Refund)
         assert result[6] == ""  # Debit (empty for positive)
         assert result[7] == "50.00"  # Credit
 
@@ -98,8 +98,8 @@ class TestProcessRow:
 
         assert result[0] == "01/16/2025"
         assert result[1] == "Starbucks"
-        assert result[2] == "-5.75"
-        assert result[6] == "-5.75"
+        assert result[2] == "Meals"  # Account
+        assert result[6] == "5.75"  # Debit (positive)
         assert result[7] == ""
 
     def test_process_row_zero_amount_is_credit(self):
@@ -117,7 +117,7 @@ class TestProcessRow:
 
         result = process_row("family", row, FAMILY_CONFIG)
 
-        assert result[2] == "0.00"
+        assert result[2] == ""  # Account (no mapping for Adjustment)
         assert result[6] == ""  # Debit empty
         assert result[7] == "0.00"  # Credit
 
@@ -218,8 +218,8 @@ class TestProcessRows:
         assert len(result) == 2
         assert result[0][0] == "01/16/2025"  # Clearing Date
         assert result[0][1] == "Amazon Prime"  # Converted merchant
-        assert result[0][2] == "-50.00"  # Amount
-        assert result[0][6] == "-50.00"  # Debit
+        assert result[0][2] == "Family - Subscriptions"  # Account
+        assert result[0][6] == "50.00"  # Debit (positive)
         assert result[0][7] == ""  # Credit
         assert result[1][1] == "Costco"
 
@@ -303,7 +303,7 @@ class TestProcessCsvFile:
             assert rows[0] == [
                 "Date",
                 "Description",
-                "Amount",
+                "Account",
                 "Statement Ending",
                 "Month Ending",
                 "Item Total",
@@ -313,15 +313,15 @@ class TestProcessCsvFile:
             # Verify first data row
             assert rows[1][0] == "01/16/2025"  # Date
             assert rows[1][1] == "Amazon Prime"  # Description
-            assert rows[1][2] == "-50.00"  # Amount
+            assert rows[1][2] == "Family - Subscriptions"  # Account
             assert rows[1][3] == ""  # Statement Ending
             assert rows[1][4] == ""  # Month Ending
             assert rows[1][5] == ""  # Item Total
-            assert rows[1][6] == "-50.00"  # Debit
+            assert rows[1][6] == "50.00"  # Debit (positive)
             assert rows[1][7] == ""  # Credit
             # Verify second data row
             assert rows[2][1] == "Costco"
-            assert rows[2][2] == "-100.00"
+            assert rows[2][2] == "Family - Groceries"  # Account
         finally:
             Path(input_path).unlink()
             Path(output_path).unlink()
@@ -363,7 +363,7 @@ class TestProcessCsvFile:
             assert rows[0][0] == "Date"  # Header
             assert rows[1][0] == "01/16/2025"
             assert rows[1][1] == "Starbucks"
-            assert rows[1][6] == "-5.75"  # Debit
+            assert rows[1][6] == "5.75"  # Debit (positive)
             assert rows[1][7] == ""  # Credit
         finally:
             Path(input_path).unlink()

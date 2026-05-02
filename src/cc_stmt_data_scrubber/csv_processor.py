@@ -4,13 +4,13 @@ import csv
 from typing import Iterable, List
 
 from .csv_config import OUTPUT_HEADER, ColumnConfig, get_column_config
-from .value_converter import convert_desc_value
+from .value_converter import convert_desc_value, map_desc_to_category
 
 
 def process_row(card_type: str, row: List[str], config: ColumnConfig) -> List[str]:
     """Process a single CSV row by applying conversions and restructuring output.
 
-    Output columns: Date, Description, Amount, Statement Ending, Month Ending,
+    Output columns: Date, Description, Account, Statement Ending, Month Ending,
     Item Total, Debit, Credit
 
     Args:
@@ -32,14 +32,16 @@ def process_row(card_type: str, row: List[str], config: ColumnConfig) -> List[st
         # Parse amount
         amount = float(amount_str)
 
-        # Split into debit/credit based on sign
-        debit = f"{amount:.2f}" if amount < 0 else ""
+        # Split into debit/credit based on sign; debit is shown as positive
+        debit = f"{abs(amount):.2f}" if amount < 0 else ""
         credit = f"{amount:.2f}" if amount >= 0 else ""
+
+        account = map_desc_to_category(card_type, description)
 
         return [
             clearing_date,
             description,
-            f"{amount:.2f}",
+            account,
             "",
             "",
             "",

@@ -24,7 +24,7 @@ class ColumnConfig:
 OUTPUT_HEADER = [
     "Date",
     "Description",
-    "Amount",
+    "Account",
     "Statement Ending",
     "Month Ending",
     "Item Total",
