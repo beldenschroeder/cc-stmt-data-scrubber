@@ -51,6 +51,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Doppio Zero": "Family - Meals",
     "Downtown Local": "Family - Meals",
     "Equator Coffees": "Family - Meals",
+    "Exxon": "Family - Vehicle Fuel",
     "FasTrak": "Family - Tolls",
     "Flatbread Queen": "Family - Meals",
     "Footsteps@Cipriani": "Family - Child Schooling",

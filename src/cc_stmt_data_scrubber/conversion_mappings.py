@@ -59,6 +59,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Doppio Zero": r"\*?\bDOPPIO ZERO\b",
     "Downtown Local": r"\*?\bDOWNTOWN LOCAL\b",
     "Equator Coffees": r"\*?\bEQUATOR COFFEES\b",
+    "Exxon": r"\*?\bEXXON\b",
     "Flatbread Queen": r"\*?\bFLATBREAD QUEEN\b",
     "Footsteps@Cipriani": r"\*?\bFOOTSTEPS\b",
     "Gallardo's Organic Farm": r"\*?\bGALLARDOS ORGANIC FAR\b",
