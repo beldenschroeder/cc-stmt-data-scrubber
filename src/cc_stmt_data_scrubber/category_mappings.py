@@ -125,6 +125,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Stanford Health Care": "Family - Health",
     "Starbucks": "Family - Meals",
     "Starter Bakery": "Family - Meals",
+    "Sunflower Caffé": "Family - Meals",
     "Talons": "Family - Meals",
     "Temple Coffee": "Family - Meals",
     "Thai Tamerind": "Family - Meals",

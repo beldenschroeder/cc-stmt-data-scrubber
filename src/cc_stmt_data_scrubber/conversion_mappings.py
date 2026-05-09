@@ -128,6 +128,7 @@ FAMILY_DESC_CONVERSIONS = {
     "SPRO Coffee Lab": r"\*?\bSPRO\b",
     "Stanford Health Care": r"\*?\bSTANFORD HEALTH CARE\b",
     "Starter Bakery": r"\*?\bSTARTER BAKERY\b",
+    "Sunflower Caffé": r"\*?\bSUNFLOWER CAFFE\b",
     "Talons": r"\*?\bTALONS\b",
     "Temple Coffee": r"\*?\bTEMPLE COFFEE\b",
     "The Cheese Board": r"\*?\bTHE CHEESE BOARD\b",
