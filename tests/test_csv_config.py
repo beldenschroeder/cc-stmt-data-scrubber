@@ -16,15 +16,11 @@ class TestColumnConfig:
         """Test creating a ColumnConfig instance."""
         config = ColumnConfig(
             clearing_date_column=1,
-            description_column=2,
             merchant_column=3,
-            category_column=4,
             amount_column=6,
         )
         assert config.clearing_date_column == 1
-        assert config.description_column == 2
         assert config.merchant_column == 3
-        assert config.category_column == 4
         assert config.amount_column == 6
 
 
@@ -36,7 +32,7 @@ class TestOutputHeader:
         assert OUTPUT_HEADER == [
             "Date",
             "Description",
-            "Amount",
+            "Account",
             "Statement Ending",
             "Month Ending",
             "Item Total",
@@ -61,21 +57,17 @@ class TestCardTypeConfigs:
         assert isinstance(config, ColumnConfig)
 
     def test_family_config_values(self):
-        """Test family configuration values."""
+        """Test family (JPMorgan Chase) configuration values."""
         config = CARD_TYPE_CONFIGS["family"]
         assert config.clearing_date_column == 1
-        assert config.description_column == 2
-        assert config.merchant_column == 3
-        assert config.category_column == 4
-        assert config.amount_column == 6
+        assert config.merchant_column == 2
+        assert config.amount_column == 5
 
     def test_personal_config_values(self):
-        """Test personal configuration values."""
+        """Test personal (Apple Card) configuration values."""
         config = CARD_TYPE_CONFIGS["personal"]
         assert config.clearing_date_column == 1
-        assert config.description_column == 2
         assert config.merchant_column == 3
-        assert config.category_column == 4
         assert config.amount_column == 6
 
 
@@ -83,21 +75,17 @@ class TestGetColumnConfig:
     """Tests for get_column_config function."""
 
     def test_get_family_config(self):
-        """Test getting family column configuration."""
+        """Test getting family (JPMorgan Chase) column configuration."""
         config = get_column_config("family")
         assert config.clearing_date_column == 1
-        assert config.description_column == 2
-        assert config.merchant_column == 3
-        assert config.category_column == 4
-        assert config.amount_column == 6
+        assert config.merchant_column == 2
+        assert config.amount_column == 5
 
     def test_get_personal_config(self):
-        """Test getting personal column configuration."""
+        """Test getting personal (Apple Card) column configuration."""
         config = get_column_config("personal")
         assert config.clearing_date_column == 1
-        assert config.description_column == 2
         assert config.merchant_column == 3
-        assert config.category_column == 4
         assert config.amount_column == 6
 
     def test_invalid_card_type_raises_error(self):

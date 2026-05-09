@@ -27,9 +27,7 @@ INPUT_HEADER = [
 
 FAMILY_CONFIG = ColumnConfig(
     clearing_date_column=1,
-    description_column=2,
     merchant_column=3,
-    category_column=4,
     amount_column=6,
 )
 
@@ -142,9 +140,7 @@ class TestProcessRow:
         """Test that process_row handles IndexError gracefully."""
         config = ColumnConfig(
             clearing_date_column=1,
-            description_column=2,
             merchant_column=10,
-            category_column=11,
             amount_column=12,
         )
         row = ["01/15/2025", "01/16/2025", "Merchant"]
@@ -190,33 +186,32 @@ class TestProcessRows:
 
     def test_process_rows_in_memory(self):
         """Test processing rows without file I/O (demonstrates SRP benefit)."""
+        # Chase (JPMorgan) format: Date, Post Date, Desc, Category, Type, Amount, Memo
         input_rows = [
             [
                 "01/15/2025",
                 "01/16/2025",
                 "AMAZON PRIME",
-                "AMAZON PRIME",
                 "Shopping",
                 "Purchase",
                 "-50.00",
-                "John",
+                "",
             ],
             [
                 "01/16/2025",
                 "01/17/2025",
                 "COSTCO",
-                "COSTCO",
                 "Groceries",
                 "Purchase",
                 "-100.00",
-                "John",
+                "",
             ],
         ]
 
         result = list(process_rows("family", input_rows))
 
         assert len(result) == 2
-        assert result[0][0] == "01/16/2025"  # Clearing Date
+        assert result[0][0] == "01/16/2025"  # Post Date
         assert result[0][1] == "Amazon Prime"  # Converted merchant
         assert result[0][2] == "Family - Subscriptions"  # Account
         assert result[0][6] == "50.00"  # Debit (positive)
@@ -253,22 +248,31 @@ class TestProcessCsvFile:
     """Tests for process_csv_file function."""
 
     def test_process_family_csv(self):
-        """Test processing a family card CSV file."""
+        """Test processing a family (JPMorgan Chase) card CSV file."""
+        # Chase (JPMorgan) format: Date, Post Date, Desc, Category, Type, Amount, Memo
+        chase_header = [
+            "Transaction Date",
+            "Post Date",
+            "Description",
+            "Category",
+            "Type",
+            "Amount",
+            "Memo",
+        ]
         with tempfile.NamedTemporaryFile(
             mode="w", delete=False, suffix=".csv"
         ) as infile:
             writer = csv.writer(infile)
-            writer.writerow(INPUT_HEADER)
+            writer.writerow(chase_header)
             writer.writerow(
                 [
                     "01/15/2025",
                     "01/16/2025",
                     "AMAZON PRIME",
-                    "AMAZON PRIME",
                     "Shopping",
                     "Purchase",
                     "-50.00",
-                    "John",
+                    "",
                 ]
             )
             writer.writerow(
@@ -276,11 +280,10 @@ class TestProcessCsvFile:
                     "01/16/2025",
                     "01/17/2025",
                     "COSTCO",
-                    "COSTCO",
                     "Groceries",
                     "Purchase",
                     "-100.00",
-                    "John",
+                    "",
                 ]
             )
             input_path = infile.name
@@ -370,23 +373,24 @@ class TestProcessCsvFile:
             Path(output_path).unlink()
 
     def test_process_csv_credit_amount(self):
-        """Test processing a CSV with a positive amount (credit)."""
+        """Test processing a family CSV with a positive amount (credit)."""
+        # Chase (JPMorgan) format: Date, Post Date, Desc, Category, Type, Amount, Memo
+        chase_header = [
+            "Transaction Date",
+            "Post Date",
+            "Description",
+            "Category",
+            "Type",
+            "Amount",
+            "Memo",
+        ]
         with tempfile.NamedTemporaryFile(
             mode="w", delete=False, suffix=".csv"
         ) as infile:
             writer = csv.writer(infile)
-            writer.writerow(INPUT_HEADER)
+            writer.writerow(chase_header)
             writer.writerow(
-                [
-                    "01/15/2025",
-                    "01/16/2025",
-                    "REFUND",
-                    "Refund",
-                    "",
-                    "Return",
-                    "25.00",
-                    "John",
-                ]
+                ["01/15/2025", "01/16/2025", "REFUND", "", "Return", "25.00", ""]
             )
             input_path = infile.name
 

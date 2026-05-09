@@ -1,7 +1,6 @@
 """Tests for value_converter module."""
 
 import pytest
-
 from cc_stmt_data_scrubber.value_converter import (
     convert_amount_value,
     convert_desc_value,
@@ -49,12 +48,12 @@ class TestConvertDescValue:
 
     def test_common_conversion_family(self):
         """Test common conversion for family card."""
-        result = convert_desc_value("family", "BARNES &amp; NOBLE")
+        result = convert_desc_value("family", "BARNES & NOBLE")
         assert result == "Barnes & Noble"
 
     def test_common_conversion_personal(self):
         """Test common conversion for personal card."""
-        result = convert_desc_value("personal", "BARNES &amp; NOBLE")
+        result = convert_desc_value("personal", "BARNES & NOBLE")
         assert result == "Barnes & Noble"
 
     def test_no_conversion(self):

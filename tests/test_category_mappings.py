@@ -1,7 +1,6 @@
 """Tests for category_mappings module."""
 
 import pytest
-
 from cc_stmt_data_scrubber.category_mappings import (
     FAMILY_CATEGORY_MAPPINGS,
     PERSONAL_CATEGORY_MAPPINGS,
@@ -51,7 +50,7 @@ class TestGetCategoryMappings:
     def test_family_excludes_personal(self):
         """Test that family mappings don't include personal-only items."""
         mappings = get_category_mappings("family")
-        assert "Starbucks" not in mappings
+        assert "J.Crew" not in mappings
 
     def test_personal_excludes_family(self):
         """Test that personal mappings don't include family-only items."""

@@ -8,8 +8,8 @@ from typing import Dict
 
 # Common conversions shared by both personal and family
 COMMON_DESC_CONVERSIONS = {
-    "Barnes & Noble": r"\*?\bBARNES &amp; NOBLE\b",
-    "Fox & Kit": r"\*?\bFOX &amp; KIT\b",
+    "Barnes & Noble": r"\*?\bBARNES & NOBLE\b",
+    "Fox & Kit": r"\*?\bFOX & KIT\b",
     "Kindle Services": r"\*?\bKindle Svcs\b",
     "Lunardi's": r"\*?\bLUNARDI'S\b",
     "Noe Café": r"\*?\bNOE CAFE\b",
@@ -62,7 +62,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Flatbread Queen": r"\*?\bFLATBREAD QUEEN\b",
     "Footsteps@Cipriani": r"\*?\bFOOTSTEPS\b",
     "Gallardo's Organic Farm": r"\*?\bGALLARDOS ORGANIC FAR\b",
-    "Gas & electricity (PG&E)": r"\*?\bPG&amp;E\b",
+    "Gas & electricity (PG&E)": r"\*?\bPG&E\b",
     "General Motors": r"\*?\bGENERAL MOTORS\b",
     "Giftly": r"\*?\bGIFTLY.COM\b",
     "Google Fi": r"\*?\bGOOGLE \*FI\b",
@@ -70,7 +70,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Greek Table": r"\*?\bGREEK TABLE\b",
     "Groovy Goose": r"\*?\bGROOVY GOOSE\b",
     "FasTrak": r"\*?\bFASTRAK\b",
-    "H&R Block tax software": r"\*?\bH&amp;R BLOCK SOFTWARE\b",
+    "H&R Block tax software": r"\*?\bH&R BLOCK SOFTWARE\b",
     "Hidden Star Orchards": r"\*?\bHIDDEN STAR ORCHARDS\b",
     "Hal's Office": r"\*?\bHAL'S OFFICE\b",
     "Highwire Coffee Roasters": r"\*?\bHIGHWIRE COFFEE ROAST\b",
@@ -79,7 +79,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Impasto": r"\*?\bIMPASTO\b",
     "Instacart": r"\*?\bINSTACART\b",
     "Internet (Sonic)": r"\*?\bSONIC\b",
-    "J&M Ibarra Farms": r"\*?\bJ&amp;M IBARRA FARM\b",
+    "J&M Ibarra Farms": r"\*?\bJ&M IBARRA FARM\b",
     "La Bicyclette": r"\*?\bLA BICYCLETTE\b",
     "La Boulangerie": r"\*?\bLA BOULANGERIE\b",
     "La Lucha": r"\*?\bLA LUCHA\b",

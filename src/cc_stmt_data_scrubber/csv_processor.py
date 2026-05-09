@@ -1,6 +1,7 @@
 """CSV file processing for credit card statement data scrubbing."""
 
 import csv
+import html
 from typing import Iterable, List
 
 from .csv_config import OUTPUT_HEADER, ColumnConfig, get_column_config
@@ -23,7 +24,8 @@ def process_row(card_type: str, row: List[str], config: ColumnConfig) -> List[st
     """
     try:
         clearing_date = row[config.clearing_date_column]
-        merchant = row[config.merchant_column]
+        # Chase exports HTML-encoded merchant names (e.g. &amp; → &)
+        merchant = html.unescape(row[config.merchant_column])
         amount_str = row[config.amount_column]
 
         # Apply description conversion to merchant value

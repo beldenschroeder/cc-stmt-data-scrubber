@@ -1,7 +1,6 @@
 """Tests for conversion_mappings module."""
 
 import pytest
-
 from cc_stmt_data_scrubber.conversion_mappings import (
     COMMON_DESC_CONVERSIONS,
     FAMILY_DESC_CONVERSIONS,
@@ -26,12 +25,12 @@ class TestConversionMappingsData:
     def test_personal_conversions_exist(self):
         """Test that personal conversions are defined."""
         assert len(PERSONAL_DESC_CONVERSIONS) > 0
-        assert "Starbucks" in PERSONAL_DESC_CONVERSIONS
+        assert "J.Crew" in PERSONAL_DESC_CONVERSIONS
 
     def test_conversions_are_regex_patterns(self):
         """Test that conversion values are regex patterns."""
-        assert COMMON_DESC_CONVERSIONS["Barnes & Noble"] == r"\bBARNES &amp; NOBLE\b"
-        assert FAMILY_DESC_CONVERSIONS["Amazon Prime"] == r"\bAMAZON PRIME\b"
+        assert COMMON_DESC_CONVERSIONS["Barnes & Noble"] == r"\*?\bBARNES & NOBLE\b"
+        assert FAMILY_DESC_CONVERSIONS["Amazon Prime"] == r"\*?\bAMAZON PRIME\b"
 
 
 class TestGetDescConversions:
@@ -52,7 +51,7 @@ class TestGetDescConversions:
     def test_family_excludes_personal(self):
         """Test that family conversions don't include personal-only items."""
         conversions = get_desc_conversions("family")
-        assert "Starbucks" not in conversions
+        assert "J.Crew" not in conversions
 
     def test_personal_excludes_family(self):
         """Test that personal conversions don't include family-only items."""

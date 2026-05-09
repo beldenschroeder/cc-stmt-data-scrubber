@@ -1,6 +1,13 @@
 """CSV column configuration for different credit card types.
 
 This module defines which columns contain specific data for each card type.
+
+Family card (JPMorgan Chase) columns:
+    Transaction Date, Post Date, Description, Category, Type, Amount, Memo
+
+Personal card (Apple Card) columns:
+    Transaction Date, Clearing Date, Description, Merchant,
+    Category, Type, Amount (USD), Purchased By
 """
 
 from dataclasses import dataclass
@@ -8,16 +15,10 @@ from dataclasses import dataclass
 
 @dataclass
 class ColumnConfig:
-    """Configuration for CSV column indices.
-
-    Input columns: Transaction Date, Clearing Date, Description, Merchant,
-    Category, Type, Amount (USD), Purchased By
-    """
+    """Configuration for CSV column indices."""
 
     clearing_date_column: int
-    description_column: int
     merchant_column: int
-    category_column: int
     amount_column: int
 
 
@@ -35,18 +36,18 @@ OUTPUT_HEADER = [
 
 # Column configurations for each card type
 CARD_TYPE_CONFIGS = {
+    # JPMorgan Chase: Transaction Date(0), Post Date(1), Description(2),
+    #                 Category(3), Type(4), Amount(5), Memo(6)
     "family": ColumnConfig(
         clearing_date_column=1,
-        description_column=2,
-        merchant_column=3,
-        category_column=4,
-        amount_column=6,
+        merchant_column=2,
+        amount_column=5,
     ),
+    # Apple Card: Transaction Date(0), Clearing Date(1), Description(2),
+    #             Merchant(3), Category(4), Type(5), Amount (USD)(6), Purchased By(7)
     "personal": ColumnConfig(
         clearing_date_column=1,
-        description_column=2,
         merchant_column=3,
-        category_column=4,
         amount_column=6,
     ),
 }
