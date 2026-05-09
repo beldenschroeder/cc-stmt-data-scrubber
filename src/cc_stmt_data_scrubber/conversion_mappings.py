@@ -56,6 +56,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Coupa Café": r"\*?\bCOUPA CAFE\b",
     "Credit card payment": r"\*?\bPayment Thank You - Web\b",
     "Crystal Springs Produce": r"\*?\bCRYSTAL SPRINGS PRODUCE\b",
+    "CVS/pharmacy": r"\*?\bCVS/PHARMACY\b",
     "Diddams Party & Toy Store": r"\*?\bDIDDAMS PARTY\b",
     "Disney+": r"\*?\bDisneyPLUS\b",
     "Doppio Zero": r"\*?\bDOPPIO ZERO\b",

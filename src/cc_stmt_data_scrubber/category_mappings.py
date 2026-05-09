@@ -47,6 +47,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Credit card annual membership fee": "Family - Other Losses",
     "Credit card payment": "N/A",
     "Crystal Springs Produce": "Family - Groceries",
+    "CVS/pharmacy": "Family - Groceries",
     "Diddams Party & Toy Store": "Family - Child Other",
     "Disney+": "Family - Subscriptions",
     "Doppio Zero": "Family - Meals",
