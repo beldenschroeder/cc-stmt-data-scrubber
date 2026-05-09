@@ -53,6 +53,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Equator Coffees": "Family - Meals",
     "Exxon": "Family - Vehicle Fuel",
     "FasTrak": "Family - Tolls",
+    "Fenellas Berries": "Family - Groceries",
     "Flatbread Queen": "Family - Meals",
     "Footsteps@Cipriani": "Family - Child Schooling",
     "Fox & Kit": "Family - Meals",
