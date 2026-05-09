@@ -13,6 +13,7 @@ COMMON_DESC_CONVERSIONS = {
     "Kindle Services": r"\*?\bKindle Svcs\b",
     "Lunardi's": r"\*?\bLUNARDI'S\b",
     "Noe Café": r"\*?\bNOE CAFE\b",
+    "Peet's Coffee": r"\*?\bPEET'S\b",
     "Starbucks": r"\*?\bSTARBUCKS\b",
 }
 
