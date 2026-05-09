@@ -114,6 +114,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "SchoolForce": "Family - Child Schooling",
     "Sextant Coffee Roasters": "Family - Meals",
     "Shell": "Family - Vehicle Fuel",
+    "Smart Baking Company": "Family - Meals",
     "SodaStream": "Family - Groceries",
     "Spectra Coffee": "Family - Meals",
     "SPRO Coffee Lab": "Family - Meals",

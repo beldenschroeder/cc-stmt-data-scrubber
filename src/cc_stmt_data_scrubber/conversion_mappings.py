@@ -118,6 +118,7 @@ FAMILY_DESC_CONVERSIONS = {
     "SchoolForce": r"\*?\bSCHOOLFORCE\b",
     "Sextant Coffee Roasters": r"\*?\bSEXTANT COFFEE ROASTE\b",
     "Shell": r"\*?\bSHELL\b",
+    "Smart Baking Company": r"\*?\bSMART BAKIN\b",
     "SodaStream": r"\*?\bSODASTREAM\b",
     "Spectra Coffee": r"\*?\bSPECTRA COFFEE\b",
     "SPRO Coffee Lab": r"\*?\bSPRO\b",
