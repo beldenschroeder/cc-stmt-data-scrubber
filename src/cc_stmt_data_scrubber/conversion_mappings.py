@@ -92,6 +92,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Menchie's Frozen Yogurt": r"\*?\bMENCHIES\b",
     "Menlo Swim & Sport": r"\*?\bTEAM SHEEPER INC\b",
     "Microsoft 365 Home": r"\*?\bMicrosoft 365\b",
+    "Mints & Honey": r"\*?\bMINTS & HONEY\b",
     "MisterSoftee": r"\*?\bMISTERSOFTEENORCAL\b",
     "Mollie Stone's": r"\*?\bMOLLIE STONES\b",
     "Neighbor's Corner": r"\*?\bNEIGHBOR'S CORNER\b",

@@ -88,6 +88,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Menchie's Frozen Yogurt": "Family - Meals",
     "Menlo Swim & Sport": "Family - Child Extracurricular",
     "Microsoft 365 Home": "Family - Subscriptions",
+    "Mints & Honey": "Family - Meals",
     "MisterSoftee": "Family - Meals",
     "Mollie Stone's": "Family - Groceries",
     "Neighbor's Corner": "Family - Meals",
