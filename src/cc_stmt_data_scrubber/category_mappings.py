@@ -119,6 +119,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Shell": "Family - Vehicle Fuel",
     "Smart Baking Company": "Family - Meals",
     "SodaStream": "Family - Groceries",
+    "Sonoma TrainTown Railroad": "Family - Leisure",
     "Spectra Coffee": "Family - Meals",
     "SPRO Coffee Lab": "Family - Meals",
     "Stanford Health Care": "Family - Health",

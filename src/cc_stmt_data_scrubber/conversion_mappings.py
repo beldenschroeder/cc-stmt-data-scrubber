@@ -123,6 +123,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Shell": r"\*?\bSHELL\b",
     "Smart Baking Company": r"\*?\bSMART BAKIN\b",
     "SodaStream": r"\*?\bSODASTREAM\b",
+    "Sonoma TrainTown Railroad": r"\*?\bSONOMA TRAINTOWN RAIL\b",
     "Spectra Coffee": r"\*?\bSPECTRA COFFEE\b",
     "SPRO Coffee Lab": r"\*?\bSPRO\b",
     "Stanford Health Care": r"\*?\bSTANFORD HEALTH CARE\b",
