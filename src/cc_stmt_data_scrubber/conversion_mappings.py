@@ -8,6 +8,7 @@ from typing import Dict
 
 # Common conversions shared by both personal and family
 COMMON_DESC_CONVERSIONS = {
+    "Credit card annual membership fee": r"\*?\bANNUAL MEMBERSHIP FEE\b",
     "Barnes & Noble": r"\*?\bBARNES & NOBLE\b",
     "Fox & Kit": r"\*?\bFOX & KIT\b",
     "Kindle Services": r"\*?\bKindle Svcs\b",
