@@ -78,6 +78,10 @@ uv run cc-scrubber
 
 Command-line arguments override `.env` values.
 
+### Option 3: Claude Code Skill
+
+If you use [Claude Code](https://claude.ai/code), a `/run-scrubber` slash command is included. It reads your `.env` configuration, verifies the input file exists, runs the scrubber, and reports the result.
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, testing, and linting instructions.
