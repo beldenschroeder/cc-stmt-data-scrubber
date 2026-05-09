@@ -137,6 +137,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Ticino": "Family - Meals",
     "Trader Joe's": "Family - Groceries",
     "TuTu School": "Family - Child Extracurricular",
+    "Walgreens": "Family - Groceries",
     "Water (Mid-Peninsula Water District)": "Family - Housing",
     "Webb Ranch": "Family - Groceries",
     "YouTube Premium": "Family - Subscriptions",

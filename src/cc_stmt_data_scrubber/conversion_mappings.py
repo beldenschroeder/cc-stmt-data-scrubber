@@ -143,6 +143,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Luna's Farm": r"\*?\bLUNAS FARMS\b",
     "Vina Enoteca": r"\*?\bVINA ENOTECA\b",
     "Viva la Tarte": r"\*?\bVIVE LA TARTE\b",
+    "Walgreens": r"\*?\bWALGREENS\b",
     "Waste (Recology)": r"\*?\bRECOLOGY\b",
     "Water (Mid-Peninsula Water District)": r"\*?\bMID-PENINSULA WATER\b",
     "Webb Ranch": r"\*?\bWEBB RANCH\b",
