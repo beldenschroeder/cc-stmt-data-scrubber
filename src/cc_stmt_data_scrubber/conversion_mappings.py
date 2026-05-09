@@ -125,6 +125,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Starter Bakery": r"\*?\bSTARTER BAKERY\b",
     "Talons": r"\*?\bTALONS\b",
     "Temple Coffee": r"\*?\bTEMPLE COFFEE\b",
+    "The Cheese Board": r"\*?\bTHE CHEESE BOARD\b",
     "The Epicurean Trader": r"\*?\bTHE EPICUREAN TRADER\b",
     "The Frenchy Gourmet": r"\*?\bTHE FRENCHY GOURMET\b",
     "Thai Tamarind": r"\*?\bTHAI TAMARIND\b",
