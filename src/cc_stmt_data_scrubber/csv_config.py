@@ -20,6 +20,7 @@ class ColumnConfig:
     clearing_date_column: int
     merchant_column: int
     amount_column: int
+    purchases_are_negative: bool = True
 
 
 OUTPUT_HEADER = [
@@ -49,6 +50,7 @@ CARD_TYPE_CONFIGS = {
         clearing_date_column=1,
         merchant_column=3,
         amount_column=6,
+        purchases_are_negative=False,
     ),
 }
 

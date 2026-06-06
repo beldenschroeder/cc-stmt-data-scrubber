@@ -34,9 +34,14 @@ def process_row(card_type: str, row: List[str], config: ColumnConfig) -> List[st
         # Parse amount
         amount = float(amount_str)
 
-        # Split into debit/credit based on sign; debit is shown as positive
-        debit = f"{abs(amount):.2f}" if amount < 0 else ""
-        credit = f"{amount:.2f}" if amount >= 0 else ""
+        # Credit card liability: purchases are credits, refunds/payments are debits.
+        # Chase exports purchases as negative; Apple Card exports them as positive.
+        if config.purchases_are_negative:
+            debit = f"{amount:.2f}" if amount > 0 else ""
+            credit = f"{abs(amount):.2f}" if amount <= 0 else ""
+        else:
+            debit = f"{abs(amount):.2f}" if amount < 0 else ""
+            credit = f"{amount:.2f}" if amount >= 0 else ""
 
         account = map_desc_to_category(card_type, description)
 

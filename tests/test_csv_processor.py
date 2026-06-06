@@ -29,14 +29,22 @@ FAMILY_CONFIG = ColumnConfig(
     clearing_date_column=1,
     merchant_column=3,
     amount_column=6,
+    purchases_are_negative=True,
+)
+
+PERSONAL_CONFIG = ColumnConfig(
+    clearing_date_column=1,
+    merchant_column=3,
+    amount_column=6,
+    purchases_are_negative=False,
 )
 
 
 class TestProcessRow:
     """Tests for process_row function."""
 
-    def test_process_family_row_debit(self):
-        """Test processing a family card row with a negative amount (debit)."""
+    def test_process_family_row_purchase(self):
+        """Test processing a family card row with a negative amount (purchase)."""
         row = [
             "01/15/2025",
             "01/16/2025",
@@ -56,11 +64,11 @@ class TestProcessRow:
         assert result[3] == ""  # Statement Ending
         assert result[4] == ""  # Month Ending
         assert result[5] == ""  # Item Total
-        assert result[6] == "100.50"  # Debit (positive)
-        assert result[7] == ""  # Credit
+        assert result[6] == ""  # Debit (empty for purchase)
+        assert result[7] == "100.50"  # Credit (purchase increases liability)
 
-    def test_process_family_row_credit(self):
-        """Test processing a family card row with a positive amount (credit)."""
+    def test_process_family_row_refund(self):
+        """Test processing a family card row with a positive amount (refund/debit)."""
         row = [
             "01/15/2025",
             "01/16/2025",
@@ -76,8 +84,8 @@ class TestProcessRow:
 
         assert result[0] == "01/16/2025"  # Date
         assert result[2] == ""  # Account (no mapping for Refund)
-        assert result[6] == ""  # Debit (empty for positive)
-        assert result[7] == "50.00"  # Credit
+        assert result[6] == "50.00"  # Debit (refund reduces liability)
+        assert result[7] == ""  # Credit (empty for refund)
 
     def test_process_personal_row(self):
         """Test processing a personal card row."""
@@ -88,17 +96,17 @@ class TestProcessRow:
             "STARBUCKS",
             "Food",
             "Purchase",
-            "-5.75",
+            "5.75",  # Apple Card exports purchases as positive
             "Jane",
         ]
 
-        result = process_row("personal", row, FAMILY_CONFIG)
+        result = process_row("personal", row, PERSONAL_CONFIG)
 
         assert result[0] == "01/16/2025"
         assert result[1] == "Starbucks"
         assert result[2] == "Meals"  # Account
-        assert result[6] == "5.75"  # Debit (positive)
-        assert result[7] == ""
+        assert result[6] == ""  # Debit (empty for purchase)
+        assert result[7] == "5.75"  # Credit (purchase increases liability)
 
     def test_process_row_zero_amount_is_credit(self):
         """Test that zero amount goes to credit column."""
@@ -214,8 +222,8 @@ class TestProcessRows:
         assert result[0][0] == "01/16/2025"  # Post Date
         assert result[0][1] == "Amazon Prime"  # Converted merchant
         assert result[0][2] == "Family - Subscriptions"  # Account
-        assert result[0][6] == "50.00"  # Debit (positive)
-        assert result[0][7] == ""  # Credit
+        assert result[0][6] == ""  # Debit (empty for purchase)
+        assert result[0][7] == "50.00"  # Credit (purchase increases liability)
         assert result[1][1] == "Costco"
 
     def test_process_rows_generator(self):
@@ -320,8 +328,8 @@ class TestProcessCsvFile:
             assert rows[1][3] == ""  # Statement Ending
             assert rows[1][4] == ""  # Month Ending
             assert rows[1][5] == ""  # Item Total
-            assert rows[1][6] == "50.00"  # Debit (positive)
-            assert rows[1][7] == ""  # Credit
+            assert rows[1][6] == ""  # Debit (empty for purchase)
+            assert rows[1][7] == "50.00"  # Credit (purchase increases liability)
             # Verify second data row
             assert rows[2][1] == "Costco"
             assert rows[2][2] == "Family - Groceries"  # Account
@@ -344,7 +352,7 @@ class TestProcessCsvFile:
                     "STARBUCKS",
                     "Food",
                     "Purchase",
-                    "-5.75",
+                    "5.75",  # Apple Card exports purchases as positive
                     "Jane",
                 ]
             )
@@ -366,8 +374,8 @@ class TestProcessCsvFile:
             assert rows[0][0] == "Date"  # Header
             assert rows[1][0] == "01/16/2025"
             assert rows[1][1] == "Starbucks"
-            assert rows[1][6] == "5.75"  # Debit (positive)
-            assert rows[1][7] == ""  # Credit
+            assert rows[1][6] == ""  # Debit (empty for purchase)
+            assert rows[1][7] == "5.75"  # Credit (purchase increases liability)
         finally:
             Path(input_path).unlink()
             Path(output_path).unlink()
@@ -406,8 +414,8 @@ class TestProcessCsvFile:
                 reader = csv.reader(f)
                 rows = list(reader)
 
-            assert rows[1][6] == ""  # Debit empty
-            assert rows[1][7] == "25.00"  # Credit
+            assert rows[1][6] == "25.00"  # Debit (refund reduces liability)
+            assert rows[1][7] == ""  # Credit (empty for refund)
         finally:
             Path(input_path).unlink()
             Path(output_path).unlink()
