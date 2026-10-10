@@ -11,6 +11,7 @@ COMMON_DESC_CONVERSIONS = {
     "Credit card annual membership fee": r"\*?\bANNUAL MEMBERSHIP FEE\b",
     "Barnes & Noble": r"\*?\bBARNES & NOBLE\b",
     "Fox & Kit": r"\*?\bFOX & KIT\b",
+    "HBO Max": r"\*?\bHBOMAX\b",
     "Kindle Services": r"\*?\bKindle Svcs\b",
     "Lunardi's": r"\*?\bLUNARDI'S\b",
     "Noe Café": r"\*?\bNOE CAFE\b",
