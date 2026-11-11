@@ -37,6 +37,7 @@ FAMILY_DESC_CONVERSIONS = {
     "B40 Café": r"\*?\bB40 CAFE\b",
     "Barista Underground": r"\*?\bBARISTA UNDERGROU\b",
     "Baskin-Robbins": r"\*?\bBASKIN\b",
+    "Bay Area Discovery Museum": r"\*?\bBADISCMUSEUM\b",
     "Bedi Farms": r"\*?\bBEDI FARMS\b",
     "Ben Tre": r"\*?\bBEN TRE\b",
     "Berkeley Bowl": r"\*?\bBERKELEY BOWL\b",

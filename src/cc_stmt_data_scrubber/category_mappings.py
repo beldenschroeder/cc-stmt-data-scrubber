@@ -26,6 +26,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Barista Underground": "Family - Groceries",
     "Barnes & Noble": "Family - Other Losses",
     "Baskin-Robbins": "Family - Meals",
+    "Bay Area Discovery Museum": "Family - Child Extracurricular",
     "Bedi Farms": "Family - Groceries",
     "Ben Tre": "Family - Meals",
     "Berkeley Bowl": "Family - Groceries",
