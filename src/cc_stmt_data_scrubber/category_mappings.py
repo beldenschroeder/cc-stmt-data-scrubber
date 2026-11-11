@@ -91,6 +91,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Lyft": "Family - Travel",
     "Made out of Dough": "Family - Groceries",
     "Mademoiselle Colette": "Family - Meals",
+    "Medina's New Generation": "Family - Groceries",
     "Menchie's Frozen Yogurt": "Family - Meals",
     "Menlo Swim & Sport": "Family - Child Extracurricular",
     "Microsoft 365 Home": "Family - Subscriptions",

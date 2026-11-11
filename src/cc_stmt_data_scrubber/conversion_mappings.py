@@ -96,6 +96,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Lyft": r"\*?\bLYFT\b",
     "Made out of Dough": r"\*?\bMADE OUT OF DOUGH\b",
     "Mademoiselle Colette": r"\*?\bMADEMOISELLE COLETTE\b",
+    "Medina's New Generation": r"\*?\bMEDINA NEW GENERATION\b",
     "Menchie's Frozen Yogurt": r"\*?\bMENCHIES\b",
     "Menlo Swim & Sport": r"\*?\bTEAM SHEEPER INC\b",
     "Microsoft 365 Home": r"\*?\bMICROSOFT 36\b",
