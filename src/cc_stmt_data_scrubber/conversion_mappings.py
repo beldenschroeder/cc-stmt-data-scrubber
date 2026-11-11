@@ -25,6 +25,7 @@ FAMILY_DESC_CONVERSIONS = {
     "76": r"\*?\b76\b",
     "Ace Hardware": r"\*?\bACE HARDWARE\b",
     "Achadinha Cheese Comp.": r"\*?\bACHADINHA CHEESE COMP\b",
+    "Adorable French Bakery": r"\*?\bADORABLE FRENCH BAKER\b",
     "Airbnb": r"\*?\bAIRBNB\b",
     "AllTrails.com": r"\*?\bALLTRAILS\b",
     "Alliance Gas": r"\*?\bALLIANCE GAS\b",

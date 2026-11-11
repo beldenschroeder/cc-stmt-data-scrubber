@@ -12,6 +12,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "76": "Family - Vehicle Fuel",
     "Ace Hardware": "Family - Home Improvement",
     "Achadinha Cheese Comp.": "Family - Groceries",
+    "Adorable French Bakery": "Family - Groceries",
     "Airbnb": "Family - Travel",
     "AllTrails.com": "Family - Subscriptions",
     "Alliance Gas": "Family - Vehicle Fuel",
