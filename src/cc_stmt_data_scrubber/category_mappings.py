@@ -134,6 +134,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Starbucks": "Family - Meals",
     "Starter Bakery": "Family - Meals",
     "Sunflower Caffé": "Family - Meals",
+    "Swank Farms": "Family - Groceries",
     "Talons": "Family - Meals",
     "Temple Coffee": "Family - Meals",
     "Thai Tamerind": "Family - Meals",
