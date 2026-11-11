@@ -55,6 +55,7 @@ FAMILY_DESC_CONVERSIONS = {
     "ChargePoint": r"\*?\bCHARGEPOINT\b",
     "Chevron": r"\*?\bCHEVRON\b",
     "Coffeebar": r"\*?\bCOFFEEBAR\b",
+    "Cookie Cutters Haircuts for Kids": r"\*?\bCCHAIRCUTSAREFUN\.COM\b",
     "Costco": r"\*?\bCOSTCO\b",
     "Cotogna and Quince": r"\*?\bCOTOGNA AND QUINCE\b",
     "Coupa Café": r"\*?\bCOUPA CAFE\b",

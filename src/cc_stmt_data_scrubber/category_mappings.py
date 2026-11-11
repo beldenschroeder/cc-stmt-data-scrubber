@@ -44,6 +44,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "ChargePoint": "Family - Vehicle Fuel",
     "Chevron": "Family - Vehicle Fuel",
     "Coffeebar": "Family - Meals",
+    "Cookie Cutters Haircuts for Kids": "Family - Child Other",
     "Costco": "Family - Groceries",
     "Cotogna and Quince": "Family - Meals",
     "Coupa Café": "Family - Meals",
