@@ -18,6 +18,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Alta Bakery and Café": "Family - Meals",
     "Alto Pharmacy": "Family - Health",
     "Amazon": "",
+    "Amazon Pharmacy": "Family - Health",
     "Amazon Prime": "Family - Subscriptions",
     "Andytown Coffee Roasters": "Family - Meals",
     "Annie's Hot Dogs": "Family - Meals",

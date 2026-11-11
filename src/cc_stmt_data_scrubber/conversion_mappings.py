@@ -31,6 +31,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Alta Bakery and Café": r"\*?\bALTA BAKERY\b",
     "Alto Pharmacy": r"\*?\bALTO PHARMACY\b",
     "Amazon": r"\*?\bAMAZON\b(?!.*PRIME\b)|\*?\bAMZN\b",
+    "Amazon Pharmacy": r"\*?\bAMZNPharma\b",
     "Amazon Prime": r"\*?\bAMAZON PRIME\b",
     "Andytown Coffee Roasters": r"\*?\bANDYTOWN COFFEE\b",
     "Annie's Hot Dogs": r"\*?\bANNIE'S HOT DOGS\b",
