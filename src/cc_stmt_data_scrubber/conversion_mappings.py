@@ -147,6 +147,7 @@ FAMILY_DESC_CONVERSIONS = {
     "The Reading Bug": r"\*?\bTHE READING BUG\b",
     "Ticino": r"\*?\bTICINO\b",
     "Trader Joe's": r"\*?\bTRADER JOE S\b",
+    "Trail Coffee Roasters": r"\*?\bTRAIL COFFEE ROASTERS\b",
     "TuTu School": r"\*?\bTUTU SCHOOL\b",
     "Luna's Farm": r"\*?\bLUNAS FARMS\b",
     "Vina Enoteca": r"\*?\bVINA ENOTECA\b",

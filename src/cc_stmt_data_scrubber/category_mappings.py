@@ -144,6 +144,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "The Reading Bug": "Family - Child Other",
     "Ticino": "Family - Meals",
     "Trader Joe's": "Family - Groceries",
+    "Trail Coffee Roasters": "Family - Meals",
     "TuTu School": "Family - Child Extracurricular",
     "Walgreens": "Family - Groceries",
     "Water (Mid-Peninsula Water District)": "Family - Housing",
