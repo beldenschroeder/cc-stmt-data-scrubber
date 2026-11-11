@@ -86,6 +86,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "J&M Ibarra Farms": "Family - Groceries",
     "Kashiwase Farms": "Family - Groceries",
     "Kindle Services": "Family - Other Losses",
+    "Kindle+": "Family - Subscriptions",
     "La Bicyclette": "Family - Meals",
     "La Burgueria": "Family - Meals",
     "La Lucha": "Family - Meals",

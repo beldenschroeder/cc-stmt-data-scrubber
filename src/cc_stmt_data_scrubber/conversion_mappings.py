@@ -93,6 +93,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Internet (Sonic)": r"\*?\bSONIC\b",
     "J&M Ibarra Farms": r"\*?\bJ&M IBARRA FARM\b",
     "Kashiwase Farms": r"\*?\bKASHIWASE FARMS\b",
+    "Kindle+": r"\*?\bKindle\+",
     "La Bicyclette": r"\*?\bLA BICYCLETTE\b",
     "La Boulangerie": r"\*?\bLA BOULANGERIE\b",
     "La Lucha": r"\*?\bLA LUCHA\b",
