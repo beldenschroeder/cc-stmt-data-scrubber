@@ -87,6 +87,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Instacart": r"\*?\bINSTACART\b",
     "Internet (Sonic)": r"\*?\bSONIC\b",
     "J&M Ibarra Farms": r"\*?\bJ&M IBARRA FARM\b",
+    "Kashiwase Farms": r"\*?\bKASHIWASE FARMS\b",
     "La Bicyclette": r"\*?\bLA BICYCLETTE\b",
     "La Boulangerie": r"\*?\bLA BOULANGERIE\b",
     "La Lucha": r"\*?\bLA LUCHA\b",
@@ -154,6 +155,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Webb Ranch": r"\*?\bWEBB RANCH\b",
     "YouTube Premium": r"\*?\bYouTubePremium\b",
     "Whole Foods": r"\*?\bWHOLE FOODS\b|\*?\bWHOLEFDS\b",
+    "Xiong Family Farm": r"\*?\bXIONG FARM\b",
     "ZombieRunner Coffee": r"\*?\bZOMBIERUNNER\b",
 }
 

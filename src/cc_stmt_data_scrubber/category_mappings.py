@@ -79,6 +79,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Instacart": "Family - Groceries",
     "Internet (Sonic)": "Family - Housing",
     "J&M Ibarra Farms": "Family - Groceries",
+    "Kashiwase Farms": "Family - Groceries",
     "Kindle Services": "Family - Other Losses",
     "La Bicyclette": "Family - Meals",
     "La Burgueria": "Family - Meals",
@@ -150,6 +151,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Viva la Tarte": "Family - Meals",
     "Waste (Recology)": "Family - Housing",
     "Whole Foods": "Family - Groceries",
+    "Xiong Family Farm": "Family - Groceries",
     "ZombieRunner Coffee": "Family - Meals",
 }
 
