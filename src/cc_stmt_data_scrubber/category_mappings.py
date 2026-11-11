@@ -47,6 +47,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Cookie Cutters Haircuts for Kids": "Family - Child Other",
     "Costco": "Family - Groceries",
     "Cotogna and Quince": "Family - Meals",
+    "Cotogna": "Family - Meals",
     "Coupa Café": "Family - Meals",
     "Credit card annual membership fee": "Family - Other Losses",
     "Credit card payment": "N/A",

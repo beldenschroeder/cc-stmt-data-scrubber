@@ -58,6 +58,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Cookie Cutters Haircuts for Kids": r"\*?\bCCHAIRCUTSAREFUN\.COM\b",
     "Costco": r"\*?\bCOSTCO\b",
     "Cotogna and Quince": r"\*?\bCOTOGNA AND QUINCE\b",
+    "Cotogna": r"\*?\bCOTOGNA\b",
     "Coupa Café": r"\*?\bCOUPA CAFE\b",
     "Credit card payment": r"\*?\bPayment Thank You - Web\b",
     "Crystal Springs Produce": r"\*?\bCRYSTAL SPRINGS PRODUCE\b",
