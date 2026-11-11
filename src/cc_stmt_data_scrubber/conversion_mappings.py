@@ -64,7 +64,7 @@ FAMILY_DESC_CONVERSIONS = {
     "Crystal Springs Produce": r"\*?\bCRYSTAL SPRINGS PRODUCE\b",
     "CVS/pharmacy": r"\*?\bCVS/PHARMACY\b",
     "Diddams Party & Toy Store": r"\*?\bDIDDAMS PARTY\b",
-    "Disney+": r"\*?\bDisneyPLUS\b",
+    "Disney+": r"\*?\bDisneyPLUS\b|\*?\bDISNEY PLUS\b",
     "Doppio Zero": r"\*?\bDOPPIO ZERO\b",
     "Downtown Local": r"\*?\bDOWNTOWN LOCAL\b",
     "Equator Coffees": r"\*?\bEQUATOR COFFEES\b",
