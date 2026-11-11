@@ -73,6 +73,7 @@ FAMILY_CATEGORY_MAPPINGS = {
     "Hal's Office": "Family - Meals",
     "HBO Max": "Family - Subscriptions",
     "Hidden Star Orchards": "Family - Groceries",
+    "Highlands Recreation Center": "Family - Child Extracurricular",
     "Highwire Coffee Roasters": "Family - Meals",
     "HMB Coffee": "Family - Meals",
     "Impark": "Family - Parking",

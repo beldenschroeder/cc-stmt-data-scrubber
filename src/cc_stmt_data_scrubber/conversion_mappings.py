@@ -81,6 +81,7 @@ FAMILY_DESC_CONVERSIONS = {
     "H&R Block tax software": r"\*?\bH&R BLOCK SOFTWARE\b",
     "Hidden Star Orchards": r"\*?\bHIDDEN STAR ORCHARDS\b",
     "Hal's Office": r"\*?\bHAL'S OFFICE\b",
+    "Highlands Recreation Center": r"\*?\bHIGHLANDS RECREATION\b",
     "Highwire Coffee Roasters": r"\*?\bHIGHWIRE COFFEE ROAST\b",
     "HMB Coffee": r"\*?\bHMB COFFEE\b",
     "Impark": r"\*?\bIMPARK\b",
